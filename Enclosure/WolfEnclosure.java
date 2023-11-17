@@ -1,8 +1,7 @@
 package Zoo.Enclosure;
 
 import Zoo.Animal.Animal;
-import Zoo.Animal.Wolf;
-import Zoo.Animal.WolfPack;
+import Zoo.Animal.Viviparous.Wolf.*;
 
 import java.util.ArrayList;
 

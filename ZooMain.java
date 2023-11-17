@@ -3,7 +3,8 @@ package Zoo;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-import Zoo.Animal.*;
+import Zoo.Animal.Oviparous.*;
+import Zoo.Animal.Viviparous.Wolf.*;
 import Zoo.Employee.Employee;
 import Zoo.Enclosure.*;
 
@@ -12,8 +13,8 @@ public class ZooMain {
     	
     	System.out.println("======== Bienvenue sur l'application Zoo ! ========");
     	
-    	Employee employee = Employee.getEmployee().initEmployee("Marc LAPORTE", 'm', 89);
-        Zoo zoo = Zoo.getZoo().initZoo("Zoo de la LP", employee, 5);
+    	Employee employee = Employee.getEmployee().initEmployee("Zoubida", 'f', 89);
+        Zoo zoo = Zoo.getZoo().initZoo("Zoo GrindLP", employee, 5);
     	
     	// En-dessous se trouve un exemple pour montrer que les classes d'animaux, d'enclos et d'employé fonctionnent
     	// Voulant se concentrer plus sur le système des loups, celle-ci est donc mise en commentaires
@@ -98,6 +99,7 @@ public class ZooMain {
 		// Création de la colonnie
 		WolfColony wolfColony = new WolfColony();
 		
+		
 		while (true) {
 			// Définir les tâches à faire grâce au Random
 			switch(cptRandoms) {
@@ -120,7 +122,7 @@ public class ZooMain {
 		            	System.out.println("Comment souhaitez-vous nommer le mâle du couple ?");
 		            	String strMale = sc.nextLine();
 		            	Wolf male = new Wolf(strMale, 'm', 36, 37, 'α');
-		            	System.out.println("Comment souhaitez-vous nommer la femelle du couple ?");
+						System.out.println("Comment souhaitez-vous nommer la femelle du couple ?");
 		            	String strFemale = sc.nextLine();
 		                Wolf female = new Wolf(strFemale, 'f', 36, 38,'α');
 		                

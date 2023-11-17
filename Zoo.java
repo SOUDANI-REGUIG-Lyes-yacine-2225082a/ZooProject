@@ -1,6 +1,6 @@
 package Zoo;
 
-import Zoo.Animal.Animal;
+import Zoo.Animal.*;
 import Zoo.Employee.Employee;
 import Zoo.Enclosure.Enclosure;
 
@@ -30,7 +30,7 @@ public final class Zoo {
 
     public void addEnclosure(Enclosure enclosure) {
         this.enclosures.add(enclosure);
-        System.out.println("L'enclos " + enclosure.getName() + " a été ajouté au Zoo " + this.name);
+        System.out.println("L'enclos " + enclosure.getName() + " a ï¿½tï¿½ ajoutï¿½ au Zoo " + this.name);
     }
 
     public void showNbAnimals() {
