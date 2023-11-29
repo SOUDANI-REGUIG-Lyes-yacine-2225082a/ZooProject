@@ -1,27 +1,27 @@
-package Zoo.Employee;
+package Zoo.Maitre;
 
 import Zoo.Animal.Animal;
-import Zoo.Enclosure.Enclosure;
+import Zoo.Enclos.Enclosure;
 
 // Design Pattern : Singleton
-public final class Employee {
+public final class Kaaris {
     private String name;
     private char sex;
     private int age;
-    private static Employee EMPLOYEE = new Employee();
+    private static Kaaris Kaaris = new Kaaris();
 
-    public static Employee getEmployee() {
-        return EMPLOYEE;
+    public static Kaaris getEmployee() {
+        return Kaaris;
     }
 
-    public Employee initEmployee(String name, char sex, int age) {
-        EMPLOYEE.setName(name);
-        EMPLOYEE.setSex(sex);
-        EMPLOYEE.setAge(age);
-        return EMPLOYEE;
+    public Kaaris initEmployee(String name, char sex, int age) {
+        Kaaris.setName(name);
+        Kaaris.setSex(sex);
+        Kaaris.setAge(age);
+        return Kaaris;
     }
 
-    private Employee() {}
+    private Kaaris() {}
 
     public void examineEnclosure(Enclosure enclosure) {
         enclosure.getInfos();
@@ -29,7 +29,7 @@ public final class Employee {
 
     public void cleanEnclosure(Enclosure enclosure) {
         enclosure.clean();
-        System.out.println(this.name + " a nettoyé l'enclos " + enclosure.getName());
+        System.out.println(this.name + " a nettoyï¿½ l'enclos " + enclosure.getName());
     }
 
     public void feedAnimalsOfEnclosure(Enclosure enclosure) {
@@ -40,12 +40,12 @@ public final class Employee {
     public void moveAnimalFromEnclosure(Animal animal, Enclosure enclosure1, Enclosure enclosure2) {
         if(enclosure1.removeAnimal(animal)) {
             if(enclosure2.addAnimal(animal)) {
-                System.out.println(this.name + " a déplacé l'animal " + animal.getName() + " de l'enclos " + enclosure1.getName() + " a l'enclos " + enclosure2.getName());
+                System.out.println(this.name + " a dï¿½placï¿½ l'animal " + animal.getName() + " de l'enclos " + enclosure1.getName() + " a l'enclos " + enclosure2.getName());
             } else {
                 enclosure1.addAnimal(animal);
             }
         }
-        // TODO: voir autre façon de faire
+        // TODO: voir autre faï¿½on de faire
     }
 
     public void setName(String name) {

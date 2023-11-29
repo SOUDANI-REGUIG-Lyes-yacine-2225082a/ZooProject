@@ -1,4 +1,4 @@
-package Zoo.Enclosure;
+package Zoo.Enclos;
 
 import Zoo.Animal.Animal;
 import Zoo.Animal.Vivipaire.TDLoup.*;

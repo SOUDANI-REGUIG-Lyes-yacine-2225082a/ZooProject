@@ -1,4 +1,4 @@
-package Zoo.Enclosure;
+package Zoo.Enclos;
 
 import Zoo.Animal.Animal;
 
@@ -8,9 +8,9 @@ public abstract class Enclosure <T> {
     private String name;
     private int area;
     private int maxAnimal; // nombre maximums d'animaux
-    private int nbAnimal; // nombre d'animaux en temps réel
+    private int nbAnimal; // nombre d'animaux en temps rï¿½el
     private ArrayList<T> animals;
-    private int cleanliness; // 3 = propre / 2 = état moyen / 1 = sale
+    private int cleanliness; // 3 = propre / 2 = ï¿½tat moyen / 1 = sale
 
     public Enclosure(String name, int area, int maxAnimal) {
         this.name = name;
@@ -26,7 +26,7 @@ public abstract class Enclosure <T> {
         System.out.println("Superficie " + this.area);
         System.out.println("Nombre max d'animaux : " + this.maxAnimal);
         System.out.println("Nombre actuels d'animaux : " + this.nbAnimal);
-        System.out.println("Niveau de propreté : " + this.cleanliness + "/3");
+        System.out.println("Niveau de propretï¿½ : " + this.cleanliness + "/3");
         for(T animal : animals) {
             System.out.println(animal); // TODO: permettre de voir le type d'animal (Wolf, Tiger etc...)
         }
@@ -37,9 +37,9 @@ public abstract class Enclosure <T> {
             if(!this.animals.contains(animal)) {
                 this.animals.add(animal);
                 ++this.nbAnimal;
-                System.out.println(((Animal) animal).getName() + " a été ajouté à l'enclos " + this.name + " ("+ this.nbAnimal +"/"+ this.maxAnimal +")");
+                System.out.println(((Animal) animal).getName() + " a ï¿½tï¿½ ajoutï¿½ ï¿½l'enclos " + this.name + " ("+ this.nbAnimal +"/"+ this.maxAnimal +")");
             } else {
-                System.out.println(((Animal) animal).getName() + " est déjà dans l'enclos " + this.name);
+                System.out.println(((Animal) animal).getName() + " est dï¿½jï¿½ dans l'enclos " + this.name);
                 return false;
             }
         } else {
@@ -53,7 +53,7 @@ public abstract class Enclosure <T> {
         if(this.animals.contains(animal)) {
             this.animals.remove(animal);
             --this.nbAnimal;
-           System.out.println(((Animal) animal).getName() + " a été enlevé à l'enclos " + this.name);
+           System.out.println(((Animal) animal).getName() + " a ï¿½tï¿½ enlevï¿½ ï¿½ l'enclos " + this.name);
         } else {
             System.out.println("L'animal n'est pas dans l'enclos " + this.name);
             return false;
@@ -65,7 +65,7 @@ public abstract class Enclosure <T> {
         for(T animal : animals) {
             ((Animal) animal).eat();
         }
-        System.out.println("Tous les animaux de l'enclos " + this.name + " ont été nourris");
+        System.out.println("Tous les animaux de l'enclos " + this.name + " ont ï¿½tï¿½ nourris");
     }
 
     public void clean() {

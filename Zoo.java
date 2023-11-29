@@ -1,15 +1,14 @@
 package Zoo;
 
-import Zoo.Animal.*;
-import Zoo.Employee.Employee;
-import Zoo.Enclosure.Enclosure;
+import Zoo.Maitre.Kaaris;
+import Zoo.Enclos.Enclosure;
 
 import java.util.ArrayList;
 
 // Design Pattern : Singleton
 public final class Zoo {
     private String name;
-    private Employee employee;
+    private Kaaris kaaris;
     private int maxEnclosure;
     private ArrayList<Enclosure> enclosures;
     private static Zoo ZOO = new Zoo();
@@ -18,9 +17,9 @@ public final class Zoo {
         return ZOO;
     }
 
-    public Zoo initZoo(String name, Employee employee, int maxEnclosure) {
+    public Zoo initZoo(String name, Kaaris kaaris, int maxEnclosure) {
         ZOO.setName(name);
-        ZOO.setEmployee(employee);
+        ZOO.setEmployee(kaaris);
         ZOO.setMaxEnclosure(maxEnclosure);
         ZOO.setEnclosures(new ArrayList<Enclosure>());
         return ZOO;
@@ -60,7 +59,7 @@ public final class Zoo {
         this.enclosures = enclosures;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployee(Kaaris kaaris) {
+        this.kaaris = kaaris;
     }
 }

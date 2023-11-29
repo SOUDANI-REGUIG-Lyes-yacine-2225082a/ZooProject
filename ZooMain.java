@@ -4,15 +4,15 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import Zoo.Animal.Vivipaire.TDLoup.*;
-import Zoo.Employee.Employee;
+import Zoo.Maitre.Kaaris;
 
 public class ZooMain {
     public static void main(String [ ] args) {
     	
     	System.out.println("======== Bienvenue sur l'application Zoo ! ========");
     	
-    	Employee employee = Employee.getEmployee().initEmployee("Zoubida", 'f', 89);
-        Zoo zoo = Zoo.getZoo().initZoo("Zoo GrindLP", employee, 5);
+    	Kaaris kaaris = Kaaris.getEmployee().initEmployee("Zoubida", 'f', 89);
+        Zoo zoo = Zoo.getZoo().initZoo("Zoo GrindLP", kaaris, 5);
     	
     	// En-dessous se trouve un exemple pour montrer que les classes d'animaux, d'enclos et d'employé fonctionnent
     	// Voulant se concentrer plus sur le système des loups, celle-ci est donc mise en commentaires
