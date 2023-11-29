@@ -1,4 +1,4 @@
-package Zoo.Animal.Oviparous;
+package Zoo.Animal.Ovipaire;
 import Zoo.Animal.FlyingAnimal;
 
 public class Phoenix extends Oviparous implements FlyingAnimal {

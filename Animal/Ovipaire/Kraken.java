@@ -1,4 +1,4 @@
-package Zoo.Animal.Oviparous;
+package Zoo.Animal.Ovipaire;
 import Zoo.Animal.MarineAnimal;
 
 public class Kraken extends Oviparous implements MarineAnimal {

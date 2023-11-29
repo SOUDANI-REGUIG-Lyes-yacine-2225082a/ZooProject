@@ -1,11 +1,11 @@
-package Zoo.Animal.Viviparous.Wolf;
+package Zoo.Animal.Vivipaire.Wolf;
 
 import java.util.ArrayList;
 
-public class WolfColony {
+public class Colonie {
     private ArrayList<Meute> meutes;
 
-    public WolfColony() {
+    public Colonie() {
        this.meutes = new ArrayList<Meute>();
     }
 

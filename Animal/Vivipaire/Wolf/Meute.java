@@ -1,4 +1,4 @@
-package Zoo.Animal.Viviparous.Wolf;
+package Zoo.Animal.Vivipaire.Wolf;
 
 import java.util.ArrayList;
 
@@ -6,27 +6,27 @@ import Zoo.Utils;
 
 public class Meute {
 
-	private WolfColony WolfColony;
-	private WolfCouple WolfCouple;
+	private Colonie Colonie;
+	private CoupleLoup CoupleLoup;
 	private ArrayList<Loup> loups;
 	private String howl;
 	
-	public Meute(WolfColony WolfColony, WolfCouple WolfCouple, String howl) {
+	public Meute(Colonie Colonie, CoupleLoup CoupleLoup, String howl) {
 		super();
-		this.WolfColony = WolfColony;
-		this.WolfColony.addWoldPack(this);
-		this.WolfCouple = WolfCouple;
-		WolfCouple.setWolfPack(this);
+		this.Colonie = Colonie;
+		this.Colonie.addWoldPack(this);
+		this.CoupleLoup = CoupleLoup;
+		CoupleLoup.setWolfPack(this);
 		this.loups = new ArrayList<Loup>();
 		this.howl = howl;
-		System.out.println("Une nouvelle meute a été crée ! (Couple de la meute : " + this.WolfCouple.getWolfMale().getName() +
-						   " & " + this.WolfCouple.getWolfFemale().getName() + ", cri : \"" + this.howl + "\")");
+		System.out.println("Une nouvelle meute a été crée ! (Couple de la meute : " + this.CoupleLoup.getWolfMale().getName() +
+						   " & " + this.CoupleLoup.getWolfFemale().getName() + ", cri : \"" + this.howl + "\")");
 	}
 
 	public void showWolfPack() {
-		if (!WolfCouple.isEmpty()) {
+		if (!CoupleLoup.isEmpty()) {
 			System.out.println("La meute de loups est constitué du couple :");
-			this.WolfCouple.showCouple();
+			this.CoupleLoup.showCouple();
 		}
 		if (!loups.isEmpty()) {
 			System.out.println("et des loups : ");
@@ -42,8 +42,8 @@ public class Meute {
 	public void showWolfs() {
 		System.out.println("Caractéristiques des loups "
 				+ "de la meute :");
-		System.out.println(this.WolfCouple.getWolfMale().toString());
-		System.out.println(this.WolfCouple.getWolfFemale().toString());
+		System.out.println(this.CoupleLoup.getWolfMale().toString());
+		System.out.println(this.CoupleLoup.getWolfFemale().toString());
 		for (Loup Loup : loups) {
 			System.out.println(Loup.toString());
 		}
@@ -68,7 +68,7 @@ public class Meute {
 	
 	// Constituer un nouveau couple
 	public void constituteCouple(Loup maleAlphaLoup) {
-		this.WolfCouple.setWolfMale(maleAlphaLoup);
+		this.CoupleLoup.setWolfMale(maleAlphaLoup);
 		maleAlphaLoup.setWolfPack(this);
 	}
 	
@@ -101,7 +101,7 @@ public class Meute {
 	}
 
 	public void giveBirth() {
-		ArrayList<Loup> wolfsBorn = this.WolfCouple.giveBirth();
+		ArrayList<Loup> wolfsBorn = this.CoupleLoup.giveBirth();
 		if (wolfsBorn != null) {
 			for (Loup Loup : wolfsBorn) {
 				this.addWolf(Loup);
@@ -125,12 +125,12 @@ public class Meute {
 	public ArrayList<Loup> getWolfs() {
 		ArrayList<Loup> allLoups = new ArrayList();
 		allLoups.addAll(this.loups);
-		allLoups.add(this.WolfCouple.getWolfMale());
-		allLoups.add(this.WolfCouple.getWolfFemale());
+		allLoups.add(this.CoupleLoup.getWolfMale());
+		allLoups.add(this.CoupleLoup.getWolfFemale());
 		return allLoups;
 	}
 
-	public WolfCouple getWolfCouple() {
-		return WolfCouple;
+	public CoupleLoup getWolfCouple() {
+		return CoupleLoup;
 	}
 }

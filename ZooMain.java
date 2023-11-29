@@ -3,7 +3,7 @@ package Zoo;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-import Zoo.Animal.Viviparous.Wolf.*;
+import Zoo.Animal.Vivipaire.Wolf.*;
 import Zoo.Employee.Employee;
 
 public class ZooMain {
@@ -95,7 +95,7 @@ public class ZooMain {
 		Scanner sc = new Scanner(System.in);
 		
 		// Création de la colonnie
-		WolfColony wolfColony = new WolfColony();
+		Colonie colonie = new Colonie();
 		
 		
 		while (true) {
@@ -125,13 +125,13 @@ public class ZooMain {
 		                Loup female = new Loup(strFemale, 'f', 36, 38,'α');
 		                
 		                // Création du couple
-		            	WolfCouple WolfCoupleApp = new WolfCouple(male, female);
+		            	CoupleLoup coupleLoupApp = new CoupleLoup(male, female);
 		                
 		                // Création de la meute
 		            	System.out.println("Une nouvelle meute de loups va être créee, nous avons besoin de vous!");
 		            	System.out.println("Quel cri de meute souhaitez-vous ? (exemple : \"Aoouuh\") ");
 		            	String howl = sc.nextLine();
-		            	Meute meuteApp = new Meute(wolfColony, WolfCoupleApp, howl);
+		            	Meute meuteApp = new Meute(colonie, coupleLoupApp, howl);
 		            }
 		            else {
 		            	System.out.println("Il ne se passe rien...");
@@ -155,14 +155,14 @@ public class ZooMain {
 		            	System.out.println("C'est la saison des amours, nous avons peut-être des loups nouveaux-nés !");
 		            	
 		            	// On vérifie si un/des couple(s) existent
-		            	if (wolfColony.getWolfPacks().isEmpty()) {
+		            	if (colonie.getWolfPacks().isEmpty()) {
 		            		System.out.println("Aucun couple n'existe à l'instant t ! Aucune reproduction n'est possible !");
 		            		break;
 		            	} 
 		            	else {
 		                	// S'il des couples existent alors ils peuvent se reproduire
 		            		int indexPack = 0;
-		                	for (Meute Meute : wolfColony.getWolfPacks()) {
+		                	for (Meute Meute : colonie.getWolfPacks()) {
 		                		
 		                		if (Meute.getWolfCouple() != null) {
 		                			System.out.println("Meute numéro " + (indexPack+1));
@@ -199,13 +199,13 @@ public class ZooMain {
 		            	System.out.println("Les meutes évoluent et les hiérarchies vont peut-être changer !");
 		            	
 		            	// On vérifie si une/des meute(s) existent
-		            	if (wolfColony.getWolfPacks().isEmpty()) {
+		            	if (colonie.getWolfPacks().isEmpty()) {
 		            		System.out.println("Aucune meute n'existe à l'instant t ! Les hierarchies ne peuvent évoluer !");
 		            		break;
 		            	} 
 		            	else {
 		                	// Si des meutes existent alors les hiérarchies peuvent évoluer
-		                	for (Meute Meute : wolfColony.getWolfPacks()) {
+		                	for (Meute Meute : colonie.getWolfPacks()) {
 		                		
 		                		// Afficher la hiérarchie
 		                		Meute.showHierarchy();
@@ -270,7 +270,7 @@ public class ZooMain {
 		        	System.out.println("Le temps passe et les loups vieillissent !");
 
 					// On vérifie si une/des meute(s) existent
-		        	if (wolfColony.getWolfPacks().isEmpty()) {
+		        	if (colonie.getWolfPacks().isEmpty()) {
 		        		System.out.println("Aucune meute n'existe à l'instant t ! Aucun loup ne peut vieillir !");
 		        		break;
 		        	}
@@ -279,7 +279,7 @@ public class ZooMain {
 		        		int randomOld;
 		        		
 		            	// Si des meutes existent alors les loups peuvent vieillir
-		            	for (Meute Meute : wolfColony.getWolfPacks()) {
+		            	for (Meute Meute : colonie.getWolfPacks()) {
 		            		
 		            		// Si la meute comprend des loups
 		            		if (Meute.getWolfs() != null) {
@@ -323,13 +323,13 @@ public class ZooMain {
 		            int randomHowlDomination;
 		            
 		        	// On vérifie si une/des meute(s) existent
-		        	if (wolfColony.getWolfPacks().isEmpty()) {
+		        	if (colonie.getWolfPacks().isEmpty()) {
 		        		System.out.println("Aucune meute n'existe à l'instant t ! Les loups ne peuvent pas hurler !");
 		        		break;
 		        	} 
 		        	else {
 		            	// Si des meutes existent alors les loups peuvent hurler
-		            	for (Meute Meute : wolfColony.getWolfPacks()) {
+		            	for (Meute Meute : colonie.getWolfPacks()) {
 		            			                    		
 		            		// Si la meute comprend des loups
 		            		if (!Meute.getWolfs().isEmpty()) {

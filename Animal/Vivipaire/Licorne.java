@@ -1,4 +1,4 @@
-package Zoo.Animal.Viviparous;
+package Zoo.Animal.Vivipaire;
 import Zoo.Animal.WalkingAnimal;
 
 public class Licorne extends Viviparous implements WalkingAnimal{

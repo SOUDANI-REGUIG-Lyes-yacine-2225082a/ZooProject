@@ -1,4 +1,4 @@
-package Zoo.Animal.Viviparous;
+package Zoo.Animal.Vivipaire;
 import Zoo.Animal.MarineAnimal;
 
 

@@ -1,7 +1,7 @@
 package Zoo.Enclosure;
 
 import Zoo.Animal.Animal;
-import Zoo.Animal.Viviparous.Wolf.*;
+import Zoo.Animal.Vivipaire.Wolf.*;
 
 public class WolfEnclosure<T extends Animal> extends Enclosure<T> {
 	private Meute Meute;

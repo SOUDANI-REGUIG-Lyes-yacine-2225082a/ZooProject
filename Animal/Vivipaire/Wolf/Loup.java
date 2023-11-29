@@ -1,6 +1,6 @@
-package Zoo.Animal.Viviparous.Wolf;
+package Zoo.Animal.Vivipaire.Wolf;
 import Zoo.Utils;
-import Zoo.Animal.Viviparous.Viviparous;
+import Zoo.Animal.Vivipaire.Viviparous;
 import Zoo.Animal.WalkingAnimal;
 
 import java.util.concurrent.ThreadLocalRandom;
