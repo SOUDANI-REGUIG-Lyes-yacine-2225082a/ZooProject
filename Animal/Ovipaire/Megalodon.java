@@ -1,7 +1,7 @@
 package Zoo.Animal.Ovipaire;
-import Zoo.Animal.MarineAnimal;
+import Zoo.Animal.AnimalMarin;
 
-public class Megalodon extends Oviparous implements MarineAnimal {
+public class Megalodon extends Ovipaire implements AnimalMarin {
 
     public Megalodon(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);

@@ -1,9 +1,9 @@
-package Zoo.Animal.Vivipaire;
+package Zoo.Animal.Ovipaire;
 import Zoo.Animal.Animal;
 
-public abstract class Viviparous extends Animal {
+public abstract class Ovipaire extends Animal {
 
-    public Viviparous(String name, char sex, int weight, int size) {
+    public Ovipaire(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);
     }
 
@@ -13,7 +13,7 @@ public abstract class Viviparous extends Animal {
 
     public void giveBirth() {
         if(super.getSex() == 'f') {
-            System.out.println("F�licitations ! " + super.getName() + " a mit bas !");
+            System.out.println("Félicitations ! " + super.getName() + " a pondue un oeuf !");
         }
     }
 }

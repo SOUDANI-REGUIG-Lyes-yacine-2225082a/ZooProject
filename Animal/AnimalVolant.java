@@ -1,5 +1,5 @@
 package Zoo.Animal;
 
-public interface FlyingAnimal {
+public interface AnimalVolant {
     public void fly();
 }

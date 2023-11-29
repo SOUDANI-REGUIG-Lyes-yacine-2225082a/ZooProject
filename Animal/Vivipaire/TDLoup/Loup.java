@@ -1,11 +1,11 @@
 package Zoo.Animal.Vivipaire.TDLoup;
 import Zoo.SystemeLoup;
-import Zoo.Animal.Vivipaire.Viviparous;
-import Zoo.Animal.WalkingAnimal;
+import Zoo.Animal.Vivipaire.Vivipaire;
+import Zoo.Animal.AnimalTerrestre;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Loup extends Viviparous implements WalkingAnimal{
+public class Loup extends Vivipaire implements AnimalTerrestre {
 
     private int age; // 1 = jeune / 2 = adulte / 3 = vieux
     private int strength; // 1 = pas fort / 2 = moyen fort / 3 = très fort

@@ -1,7 +1,7 @@
 package Zoo.Animal.Vivipaire;
-import Zoo.Animal.WalkingAnimal;
+import Zoo.Animal.AnimalTerrestre;
 
-public class Nymphe extends Viviparous implements WalkingAnimal {
+public class Nymphe extends Vivipaire implements AnimalTerrestre {
 
     public Nymphe(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);

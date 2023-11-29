@@ -1,7 +1,7 @@
 package Zoo.Animal.Ovipaire;
-import Zoo.Animal.FlyingAnimal;
+import Zoo.Animal.AnimalVolant;
 
-public class Phoenix extends Oviparous implements FlyingAnimal {
+public class Phoenix extends Ovipaire implements AnimalVolant {
 
     public Phoenix(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);

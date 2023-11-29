@@ -1,8 +1,8 @@
 package Zoo.Animal.Vivipaire;
-import Zoo.Animal.MarineAnimal;
+import Zoo.Animal.AnimalMarin;
 
 
-public class Sirene extends Viviparous implements MarineAnimal {
+public class Sirene extends Vivipaire implements AnimalMarin {
 
     public Sirene(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);

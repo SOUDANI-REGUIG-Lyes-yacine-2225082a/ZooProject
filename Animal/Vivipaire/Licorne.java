@@ -1,7 +1,7 @@
 package Zoo.Animal.Vivipaire;
-import Zoo.Animal.WalkingAnimal;
+import Zoo.Animal.AnimalTerrestre;
 
-public class Licorne extends Viviparous implements WalkingAnimal{
+public class Licorne extends Vivipaire implements AnimalTerrestre {
 
     public Licorne(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);

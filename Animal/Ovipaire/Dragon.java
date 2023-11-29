@@ -1,8 +1,9 @@
 package Zoo.Animal.Ovipaire;
-import Zoo.Animal.FlyingAnimal;
+import Zoo.Animal.AnimalVolant;
+import Zoo.Animal.AnimalMarin;
 
 
-public class Dragon extends Oviparous implements FlyingAnimal  {
+public class Dragon extends Ovipaire implements AnimalVolant, AnimalMarin {
 
     /**
      * Dragon
@@ -19,5 +20,10 @@ public class Dragon extends Oviparous implements FlyingAnimal  {
     @Override
     public void fly() {
         System.out.println(super.getName() + " vole majestueusement !");
+    }
+
+    @Override
+    public void swim() {
+
     }
 }

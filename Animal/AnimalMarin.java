@@ -1,5 +1,5 @@
 package Zoo.Animal;
 
-public interface MarineAnimal {
+public interface AnimalMarin {
     public void swim();
 }
