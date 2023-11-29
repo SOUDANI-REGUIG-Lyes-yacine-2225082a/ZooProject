@@ -3,7 +3,7 @@ package Zoo;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-import Zoo.Animal.Vivipaire.Wolf.*;
+import Zoo.Animal.Vivipaire.TDLoup.*;
 import Zoo.Employee.Employee;
 
 public class ZooMain {
@@ -106,7 +106,7 @@ public class ZooMain {
 				case 0:
 				
 					// On fait une pause pour l'utilisateur
-					Utils.takePause();
+					SystemeLoup.takePause();
 					
 					// On décide si on crée une nouvelle meute (généré aléatoirement, 1 chance sur 2)
 		            int randomPack = ThreadLocalRandom.current().nextInt(1,randomOne+1);
@@ -144,7 +144,7 @@ public class ZooMain {
 				case 1:
 					
 					// On fait une pause pour l'utilisateur
-					Utils.takePause();
+					SystemeLoup.takePause();
 					
 					// On décide si c'est la saison des amours (généré aléatoirement, 1 chance sur 4)
 		            int randomSeason = ThreadLocalRandom.current().nextInt(1,randomTwo+1);
@@ -186,7 +186,7 @@ public class ZooMain {
 				case 2:
 					
 					// On fait une pause pour l'utilisateur
-					Utils.takePause();
+					SystemeLoup.takePause();
 
 					// On décide si on doit faire évoluer naturellement la hierarchie (généré aléatoirement, 1 chance sur 4)
 		            int randomHierarchy = ThreadLocalRandom.current().nextInt(1,randomThree+1);
@@ -263,7 +263,7 @@ public class ZooMain {
 				case 3:
 					
 					// On fait une pause pour l'utilisateur
-					Utils.takePause();
+					SystemeLoup.takePause();
 					
 					System.out.println("");
 		        	System.out.println("======== VIEILLISSEMENT DES LOUPS ========");
@@ -312,7 +312,7 @@ public class ZooMain {
 				case 4:
 					
 					// On fait une pause pour l'utilisateur
-					Utils.takePause();
+					SystemeLoup.takePause();
 					
 					System.out.println("");
 		        	System.out.println("======== HURLEMENT DES LOUPS ========");

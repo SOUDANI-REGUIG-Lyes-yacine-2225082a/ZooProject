@@ -1,5 +1,5 @@
-package Zoo.Animal.Vivipaire.Wolf;
-import Zoo.Utils;
+package Zoo.Animal.Vivipaire.TDLoup;
+import Zoo.SystemeLoup;
 import Zoo.Animal.Vivipaire.Viviparous;
 import Zoo.Animal.WalkingAnimal;
 
@@ -18,7 +18,7 @@ public class Loup extends Viviparous implements WalkingAnimal{
     private Meute Meute;
 
     public Loup(String name, char sex, int weight, int size, char rankDomination) {
-        super(Utils.toTitle(name), sex, weight, size);
+        super(SystemeLoup.toTitle(name), sex, weight, size);
         
         // On détermine la force à 3 si le loup est un alphal
         if (rankDomination == 'α') {
@@ -32,7 +32,7 @@ public class Loup extends Viviparous implements WalkingAnimal{
         this.domination = 0;
         // Le facteur de violence est généré aléatoirement (compris entre 1 et 5)
         this.violence = ThreadLocalRandom.current().nextInt(1,5+1);
-        if(Utils.isInListRank(rankDomination)) {
+        if(SystemeLoup.isInListRank(rankDomination)) {
             this.rankDomination = rankDomination;
         }
     }
@@ -161,7 +161,7 @@ public class Loup extends Viviparous implements WalkingAnimal{
 
     private void switchRankDomination(Loup Loup) {
         // on considére qu'un échange de rang s'effectue si l'agresseur a un rang inférieur à la cible
-        if(Utils.isDominant(this.rankDomination, Loup.getRankDomination())) {
+        if(SystemeLoup.isDominant(this.rankDomination, Loup.getRankDomination())) {
             char rankDominationTemp = this.rankDomination;
             this.rankDomination = Loup.getRankDomination();
             Loup.setRankDomination(rankDominationTemp);

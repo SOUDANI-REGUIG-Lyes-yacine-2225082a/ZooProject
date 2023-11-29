@@ -1,8 +1,8 @@
-package Zoo.Animal.Vivipaire.Wolf;
+package Zoo.Animal.Vivipaire.TDLoup;
 
 import java.util.ArrayList;
 
-import Zoo.Utils;
+import Zoo.SystemeLoup;
 
 public class Meute {
 
@@ -55,7 +55,7 @@ public class Meute {
 		ArrayList newHierarchy = new ArrayList();
 		
 		// On parcourt tout les rangs de domination
-		for (Object c : Utils.getListRankDomination()) {
+		for (Object c : SystemeLoup.getListRankDomination()) {
 			for (Loup Loup : this.getWolfs()) {
 				if ((char) c == Loup.getRankDomination()) {
 					newHierarchy.add(c);
@@ -113,7 +113,7 @@ public class Meute {
 	public void decreaseRank(Loup Loup) {
 		if(this.getWolfs().contains(Loup)) {
 			char oldRank = Loup.getRankDomination();
-			Loup.setRankDomination(Utils.decreaseRank(Loup.getRankDomination()));
+			Loup.setRankDomination(SystemeLoup.decreaseRank(Loup.getRankDomination()));
 			System.out.println(Loup.getName() + " a vu son rang diminué (" +
 					oldRank + " -> " + Loup.getRankDomination() + ")");
 		}
