@@ -47,8 +47,6 @@ public class ZooMain {
         zoo.showAllAnimals();
         enclosure.feedAnimals();
         
-        System.out.println(Utils.getListRankDomination());
-        
         */
         
         // Lancement de la simulation
