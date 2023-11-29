@@ -13,7 +13,7 @@ public abstract class Oviparous extends Animal {
 
     public void giveBirth() {
         if(super.getSex() == 'f') {
-            System.out.println("F�licitations ! " + super.getName() + " a pondue un oeuf !");
+            System.out.println("Félicitations ! " + super.getName() + " a pondue un oeuf !");
         }
     }
 }

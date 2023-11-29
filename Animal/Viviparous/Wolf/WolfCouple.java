@@ -6,19 +6,19 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class WolfCouple {
 
-    private Wolf WolfMale;
-    private Wolf WolfFemale;
+    private Loup loupMale;
+    private Loup loupFemale;
 
-    public WolfCouple(Wolf WolfMale, Wolf WolfFemale) {
-    	this.WolfMale = WolfMale;
-    	this.WolfFemale = WolfFemale;
-    	System.out.println(WolfMale.getName() + " et " + WolfFemale.getName() + " forment un nouveau couple de loups !");
+    public WolfCouple(Loup loupMale, Loup loupFemale) {
+    	this.loupMale = loupMale;
+    	this.loupFemale = loupFemale;
+    	System.out.println(loupMale.getName() + " et " + loupFemale.getName() + " forment un nouveau couple de loups !");
     }
 
-    public void setWolfMale(Wolf WolfMale) {
-        if('α' == WolfMale.getRankDomination()) {
-        	if('m' == WolfMale.getSex()) {
-        		this.WolfMale = WolfMale;
+    public void setWolfMale(Loup loupMale) {
+        if('α' == loupMale.getRankDomination()) {
+        	if('m' == loupMale.getSex()) {
+        		this.loupMale = loupMale;
         	} else {
         	 System.out.println("Le loup mâle doit être un mâle");	
         	}            
@@ -28,10 +28,10 @@ public class WolfCouple {
 
     }
 
-    public void setWolfFemale(Wolf WolfFemale) {
-        if('α' == WolfFemale.getRankDomination()) {
-        	if('f' == WolfFemale.getSex()) {
-        		this.WolfFemale = WolfFemale;
+    public void setWolfFemale(Loup loupFemale) {
+        if('α' == loupFemale.getRankDomination()) {
+        	if('f' == loupFemale.getSex()) {
+        		this.loupFemale = loupFemale;
         	} else {
         	 System.out.println("Le loup femelle doit être un femelle");	
         	} 
@@ -40,24 +40,24 @@ public class WolfCouple {
         }
     }
 
-    public void setWolfPack(WolfPack WolfPack) {
-		this.WolfMale.setWolfPack(WolfPack);
-		this.WolfFemale.setWolfPack(WolfPack);
+    public void setWolfPack(Meute Meute) {
+		this.loupMale.setWolfPack(Meute);
+		this.loupFemale.setWolfPack(Meute);
 	}
 
 	public void showCouple() {
-        System.out.println("Loup mâle : " + WolfMale + "\nLoup femelle : " + WolfFemale);
+        System.out.println("Loup mâle : " + loupMale + "\nLoup femelle : " + loupFemale);
     }
 
-    public ArrayList<Wolf> giveBirth() {
+    public ArrayList<Loup> giveBirth() {
     	
     	// On estime qu'un loup doit avoir 2 en âge pour procréer
-    	if (this.WolfMale.getAge() > 1 && this.WolfFemale.getAge() > 1) {
+    	if (this.loupMale.getAge() > 1 && this.loupFemale.getAge() > 1) {
 	        // Le nombre de loups-nés est généré aléatoirement (compris entre 1 et 7)
 	        int nbWolf = ThreadLocalRandom.current().nextInt(1,7+1);
 	        System.out.println("Félicitations ! Vous avez " + nbWolf + " loups nouveaux-nés :");
 	        System.out.println("Comment souhaitez-vous les nommer ?");
-	        ArrayList<Wolf> WolfsBorn = new ArrayList<Wolf>();
+	        ArrayList<Loup> wolfsBorn = new ArrayList<Loup>();
 	        for(int i = 0; i < nbWolf; ++i) {
 	        	int sex = ThreadLocalRandom.current().nextInt(1,2+1);
 	        	char charSex = 'm';
@@ -72,11 +72,11 @@ public class WolfCouple {
 	        	Scanner sc = new Scanner(System.in);
 	        	System.out.println("Veuillez saisir un nom pour le loup " + (i+1) + " : ");
 	        	String str = sc.nextLine();
-	            Wolf Wolf = new Wolf(str, charSex, 2, 7, 'β');
-	            WolfsBorn.add(Wolf);
-	            System.out.println("Bébé " + Wolf.getName() + " est arrivé ! Félicitations !");
+	            Loup Loup = new Loup(str, charSex, 2, 7, 'β');
+	            wolfsBorn.add(Loup);
+	            System.out.println("Bébé " + Loup.getName() + " est arrivé ! Félicitations !");
 	        }
-	        return WolfsBorn;
+	        return wolfsBorn;
     	}
     	else {
     		System.out.println("Le couple n'est pas assez âgé pour procréer !");
@@ -84,16 +84,16 @@ public class WolfCouple {
     	}
     }
 
-	public Wolf getWolfMale() {
-		return WolfMale;
+	public Loup getWolfMale() {
+		return loupMale;
 	}
 
-	public Wolf getWolfFemale() {
-		return WolfFemale;
+	public Loup getWolfFemale() {
+		return loupFemale;
 	}
     
     public boolean isEmpty() {
-    	if (this.WolfMale == null && this.WolfFemale == null) {
+    	if (this.loupMale == null && this.loupFemale == null) {
     		return true;
     	}
     	else {

@@ -3,10 +3,8 @@ package Zoo;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-import Zoo.Animal.Oviparous.*;
 import Zoo.Animal.Viviparous.Wolf.*;
 import Zoo.Employee.Employee;
-import Zoo.Enclosure.*;
 
 public class ZooMain {
     public static void main(String [ ] args) {
@@ -121,10 +119,10 @@ public class ZooMain {
 		            	// Création du male et de la femelle du couple
 		            	System.out.println("Comment souhaitez-vous nommer le mâle du couple ?");
 		            	String strMale = sc.nextLine();
-		            	Wolf male = new Wolf(strMale, 'm', 36, 37, 'α');
+		            	Loup male = new Loup(strMale, 'm', 36, 37, 'α');
 						System.out.println("Comment souhaitez-vous nommer la femelle du couple ?");
 		            	String strFemale = sc.nextLine();
-		                Wolf female = new Wolf(strFemale, 'f', 36, 38,'α');
+		                Loup female = new Loup(strFemale, 'f', 36, 38,'α');
 		                
 		                // Création du couple
 		            	WolfCouple WolfCoupleApp = new WolfCouple(male, female);
@@ -133,7 +131,7 @@ public class ZooMain {
 		            	System.out.println("Une nouvelle meute de loups va être créee, nous avons besoin de vous!");
 		            	System.out.println("Quel cri de meute souhaitez-vous ? (exemple : \"Aoouuh\") ");
 		            	String howl = sc.nextLine();
-		            	WolfPack WolfPackApp = new WolfPack(wolfColony, WolfCoupleApp, howl);
+		            	Meute meuteApp = new Meute(wolfColony, WolfCoupleApp, howl);
 		            }
 		            else {
 		            	System.out.println("Il ne se passe rien...");
@@ -164,12 +162,12 @@ public class ZooMain {
 		            	else {
 		                	// S'il des couples existent alors ils peuvent se reproduire
 		            		int indexPack = 0;
-		                	for (WolfPack WolfPack : wolfColony.getWolfPacks()) {
+		                	for (Meute Meute : wolfColony.getWolfPacks()) {
 		                		
-		                		if (WolfPack.getWolfCouple() != null) {
+		                		if (Meute.getWolfCouple() != null) {
 		                			System.out.println("Meute numéro " + (indexPack+1));
 		                			++indexPack;
-		                			WolfPack.giveBirth();
+		                			Meute.giveBirth();
 		                		}
 		                		else {
 		                			System.out.println("La meute n'as pas de couple !");
@@ -207,15 +205,15 @@ public class ZooMain {
 		            	} 
 		            	else {
 		                	// Si des meutes existent alors les hiérarchies peuvent évoluer
-		                	for (WolfPack WolfPack : wolfColony.getWolfPacks()) {
+		                	for (Meute Meute : wolfColony.getWolfPacks()) {
 		                		
 		                		// Afficher la hiérarchie
-		                		WolfPack.showHierarchy();
+		                		Meute.showHierarchy();
 		                		
 		                		// Si la meute comprend des loups
-		                		if (!WolfPack.getWolfs().isEmpty()) {
+		                		if (!Meute.getWolfs().isEmpty()) {
 		                			// On parcourt les loups de la meute
-		                			for (Wolf Wolf : WolfPack.getWolfs()) {
+		                			for (Loup Loup : Meute.getWolfs()) {
 
 		                    			randomDomination = ThreadLocalRandom.current().nextInt(1,5+1);
 		                    			
@@ -223,30 +221,30 @@ public class ZooMain {
 		                    			if (randomDomination == 1) {
 		                    				
 		                    				// On choisit le loup que l'on va essayer de dominer aléatoirement
-		                    				Wolf WolfDominated = Wolf;
+		                    				Loup loupDominated = Loup;
 		                    				int randomWolfDominated;
 		                    				
 		                    				// On choisit un loup dans la meute (différent de celui qui lance la domination)
-		                    				while (WolfDominated == Wolf) {
-		                    					randomWolfDominated = ThreadLocalRandom.current().nextInt(1,WolfPack.getWolfs().size()+1);
-		                    					WolfDominated = WolfPack.getWolfs().get(randomWolfDominated-1);
+		                    				while (loupDominated == Loup) {
+		                    					randomWolfDominated = ThreadLocalRandom.current().nextInt(1, Meute.getWolfs().size()+1);
+		                    					loupDominated = Meute.getWolfs().get(randomWolfDominated-1);
 		                    				}
 		                    				
-		                    				Wolf.dominate(WolfDominated);
+		                    				Loup.dominate(loupDominated);
 		                    			}
 		                    			
 		                    			randomDecreaseRank = ThreadLocalRandom.current().nextInt(1,3+1);
 		                    			
 		                    			// On décide si on baisse le rang de domination du loup (1 chance sur 3) 
 		                    			if (randomDecreaseRank == 1) {
-		                    				WolfPack.decreaseRank(Wolf);
+		                    				Meute.decreaseRank(Loup);
 		                    			}
 		                			}
 		                			
 		                			// Afficher la nouvelle hiérarchie
-		                			WolfPack.showWolfs();
+		                			Meute.showWolfs();
 		                    		System.out.print("Nouvelle ");
-		                			WolfPack.showHierarchy();
+		                			Meute.showHierarchy();
 		                		}
 		                		else {
 		                			System.out.println("La meute n'a pas de loups !");
@@ -281,26 +279,26 @@ public class ZooMain {
 		        		int randomOld;
 		        		
 		            	// Si des meutes existent alors les loups peuvent vieillir
-		            	for (WolfPack WolfPack : wolfColony.getWolfPacks()) {
+		            	for (Meute Meute : wolfColony.getWolfPacks()) {
 		            		
 		            		// Si la meute comprend des loups
-		            		if (WolfPack.getWolfs() != null) {
+		            		if (Meute.getWolfs() != null) {
 		            			
 		            			// On affiche les loups actuels de la meute
 		                		System.out.println("Loups actuels de la meute :");
-		                		WolfPack.showWolfs();
+		                		Meute.showWolfs();
 		            			
 		            			// On parcourt les loups de la meute
-		            			for (Wolf Wolf : WolfPack.getWolfs()) {
+		            			for (Loup Loup : Meute.getWolfs()) {
 		            				
 		                			// On fait vieillir tout les loups
-		            				Wolf.makeOld();
+		            				Loup.makeOld();
 		            			}
 		            			System.out.println("Les loups de la meute ont tous vieilli !");
 		            			
 		            			// On affiche les loups actuels de la meute
 		                		System.out.println("Loups de la meute après vieillissement :");
-		                		WolfPack.showWolfs();
+		                		Meute.showWolfs();
 		            		}
 		            		else {
 		            			System.out.println("La meute n'a pas de loups !");
@@ -331,18 +329,18 @@ public class ZooMain {
 		        	} 
 		        	else {
 		            	// Si des meutes existent alors les loups peuvent hurler
-		            	for (WolfPack WolfPack : wolfColony.getWolfPacks()) {
+		            	for (Meute Meute : wolfColony.getWolfPacks()) {
 		            			                    		
 		            		// Si la meute comprend des loups
-		            		if (!WolfPack.getWolfs().isEmpty()) {
+		            		if (!Meute.getWolfs().isEmpty()) {
 		            			// On parcourt les loups de la meute
-		            			for (Wolf Wolf : WolfPack.getWolfs()) {
+		            			for (Loup Loup : Meute.getWolfs()) {
 
 		            				randomHowlAll = ThreadLocalRandom.current().nextInt(1,randomFive+1);
 		                			
 		                			// On décide si le loup doit hurler pour montrer son appartenance à une meute (1 chance sur 5) 
 		                			if (randomHowlAll == 1) {
-		                				Wolf.howlPack(false);
+		                				Loup.howlPack(false);
 		                			}
 
 		            				randomHowlDomination = ThreadLocalRandom.current().nextInt(1,randomFive+1);
@@ -351,17 +349,17 @@ public class ZooMain {
 		                			if (randomHowlDomination == 1) {
 		                				
 		                				// On choisit le loup que l'on va essayer de dominer aléatoirement
-		                				Wolf WolfDominated = Wolf;
+		                				Loup loupDominated = Loup;
 		                				int randomWolfDominated;
 		                				
 		                				// On choisit un loup dans la meute (différent de celui qui lance la domination)
-		                				while (WolfDominated == Wolf) {
+		                				while (loupDominated == Loup) {
 		                					//System.out.println(WolfPack.getWolfs().size());
-		                					randomWolfDominated = ThreadLocalRandom.current().nextInt(1,WolfPack.getWolfs().size()+1);
-		                					WolfDominated = WolfPack.getWolfs().get(randomWolfDominated-1);
+		                					randomWolfDominated = ThreadLocalRandom.current().nextInt(1, Meute.getWolfs().size()+1);
+		                					loupDominated = Meute.getWolfs().get(randomWolfDominated-1);
 		                				}
 		                				
-		                				Wolf.howlDomination(WolfDominated);
+		                				Loup.howlDomination(loupDominated);
 		                			}
 		            			}
 		            		}

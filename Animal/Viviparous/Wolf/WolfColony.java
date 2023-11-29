@@ -3,28 +3,28 @@ package Zoo.Animal.Viviparous.Wolf;
 import java.util.ArrayList;
 
 public class WolfColony {
-    private ArrayList<WolfPack> WolfPacks;
+    private ArrayList<Meute> meutes;
 
     public WolfColony() {
-       this.WolfPacks = new ArrayList<WolfPack>();
+       this.meutes = new ArrayList<Meute>();
     }
 
     public void showWolfs() {
         System.out.println("Voici les loups de la colonie :");
-        for (WolfPack WolfPack : WolfPacks) {
-            for(Wolf Wolf : WolfPack.getWolfs()) {
-                System.out.println(Wolf);
+        for (Meute Meute : meutes) {
+            for(Loup Loup : Meute.getWolfs()) {
+                System.out.println(Loup);
             }
         }
     }
 
-    public void addWoldPack(WolfPack WolfPack) {
-        if(!this.WolfPacks.contains(WolfPack)) {
-            this.WolfPacks.add(WolfPack);
+    public void addWoldPack(Meute Meute) {
+        if(!this.meutes.contains(Meute)) {
+            this.meutes.add(Meute);
         }
     }
     
-    public ArrayList<WolfPack> getWolfPacks() {
-    	return this.WolfPacks;
+    public ArrayList<Meute> getWolfPacks() {
+    	return this.meutes;
     }
 }

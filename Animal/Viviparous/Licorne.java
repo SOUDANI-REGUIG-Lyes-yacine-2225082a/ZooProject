@@ -1,9 +1,9 @@
 package Zoo.Animal.Viviparous;
 import Zoo.Animal.WalkingAnimal;
 
-public class Unicorn extends Viviparous implements WalkingAnimal{
+public class Licorne extends Viviparous implements WalkingAnimal{
 
-    public Unicorn(String name, char sex, int weight, int size) {
+    public Licorne(String name, char sex, int weight, int size) {
         super(name, sex, weight, size);
     }
 
