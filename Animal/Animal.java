@@ -11,7 +11,9 @@ public abstract class Animal {
     private int size; // en centim�tres
     private boolean hunger; // FALSE = pas faim / TRUE = a faim
     private boolean sleep; // FALSE = ne dort pas / TRUE = dort
-    private boolean health; // FALSE = mauvaise sant� / TRUE = bonne sant�
+    private boolean health; // FALSE = mauvaise sant� / TRUE = bonne sante
+    
+    private boolean isAlive;
 
     public Animal(String name, char sex, int weight, int size) {
         this.name = name;
@@ -88,6 +90,13 @@ public abstract class Animal {
         return health;
     }
     
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
     
     /*
     public void makeOld() {
