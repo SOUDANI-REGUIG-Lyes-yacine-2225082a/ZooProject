@@ -1,9 +1,10 @@
 package Zoo;
 
-import Maitre.Kaaris;
-import Enclos.Enclosure;
-
 import java.util.ArrayList;
+
+
+import Enclos.Enclosure;
+import Maitre.Kaaris;
 
 // Design Pattern : Singleton
 public final class Zoo {
