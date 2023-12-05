@@ -1,5 +1,5 @@
-package Zoo.Animal.Vivipaire;
-import Zoo.Animal.AnimalTerrestre;
+package Animal.Vivipaire;
+import Animal.AnimalTerrestre;
 
 public class Nymphe extends Vivipaire implements AnimalTerrestre {
 

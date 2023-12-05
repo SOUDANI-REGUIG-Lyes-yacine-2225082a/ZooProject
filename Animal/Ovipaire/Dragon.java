@@ -1,6 +1,6 @@
-package Zoo.Animal.Ovipaire;
-import Zoo.Animal.AnimalVolant;
-import Zoo.Animal.AnimalMarin;
+package Animal.Ovipaire;
+import Animal.AnimalVolant;
+import Animal.AnimalMarin;
 
 
 public class Dragon extends Ovipaire implements AnimalVolant, AnimalMarin {

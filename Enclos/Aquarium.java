@@ -1,6 +1,6 @@
-package Zoo.Enclos;
+package Enclos;
 
-import Zoo.Animal.AnimalMarin;
+import Animal.AnimalMarin;
 
 public class Aquarium<T extends AnimalMarin> extends Enclosure {
     private int depth;

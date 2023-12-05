@@ -1,5 +1,5 @@
-package Zoo.Animal.Ovipaire;
-import Zoo.Animal.Animal;
+package Animal.Ovipaire;
+import Animal.Animal;
 
 public abstract class Ovipaire extends Animal {
 

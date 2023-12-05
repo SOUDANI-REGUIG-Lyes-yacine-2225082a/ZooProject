@@ -1,27 +1,28 @@
-package Zoo.Maitre;
+package Maitre;
 
-import Zoo.Animal.Animal;
-import Zoo.Enclos.Enclosure;
+import Animal.Animal;
+
+import Enclos.Enclosure;
 
 // Design Pattern : Singleton
 public final class Kaaris {
     private String name;
     private char sex;
     private int age;
-    private static Kaaris Kaaris = new Kaaris();
+    private static Kaaris Kaaris= new Kaaris();
 
     public static Kaaris getEmployee() {
         return Kaaris;
     }
 
     public Kaaris initEmployee(String name, char sex, int age) {
-        Kaaris.setName(name);
+    	Kaaris.setName(name);
         Kaaris.setSex(sex);
         Kaaris.setAge(age);
         return Kaaris;
     }
 
-    private Kaaris() {}
+
 
     public void examineEnclosure(Enclosure enclosure) {
         enclosure.getInfos();

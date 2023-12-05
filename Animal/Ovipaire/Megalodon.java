@@ -1,5 +1,5 @@
-package Zoo.Animal.Ovipaire;
-import Zoo.Animal.AnimalMarin;
+package Animal.Ovipaire;
+import Animal.AnimalMarin;
 
 public class Megalodon extends Ovipaire implements AnimalMarin {
 

@@ -1,7 +1,8 @@
-package Zoo.Animal.Vivipaire.TDLoup;
+package Animal.Vivipaire.TDLoup;
 import Zoo.SystemeLoup;
-import Zoo.Animal.Vivipaire.Vivipaire;
-import Zoo.Animal.AnimalTerrestre;
+
+import Animal.Vivipaire.Vivipaire;
+import Animal.AnimalTerrestre;
 
 import java.util.concurrent.ThreadLocalRandom;
 

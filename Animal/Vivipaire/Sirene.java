@@ -1,5 +1,5 @@
-package Zoo.Animal.Vivipaire;
-import Zoo.Animal.AnimalMarin;
+package Animal.Vivipaire;
+import Animal.AnimalMarin;
 
 
 public class Sirene extends Vivipaire implements AnimalMarin {

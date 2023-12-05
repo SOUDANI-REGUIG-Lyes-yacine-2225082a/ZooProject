@@ -1,4 +1,4 @@
-package Zoo.Animal.Vivipaire.TDLoup;
+package Animal.Vivipaire.TDLoup;
 
 import java.util.ArrayList;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-package Zoo.Enclos;
+package Enclos;
 
-import Zoo.Animal.AnimalVolant;
+import Animal.AnimalVolant;
 
 public class Voliere<T extends AnimalVolant> extends Enclosure {
     private int height;

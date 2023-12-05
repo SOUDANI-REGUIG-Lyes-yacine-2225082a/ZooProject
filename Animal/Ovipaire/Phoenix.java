@@ -1,5 +1,5 @@
-package Zoo.Animal.Ovipaire;
-import Zoo.Animal.AnimalVolant;
+package Animal.Ovipaire;
+import Animal.AnimalVolant;
 
 public class Phoenix extends Ovipaire implements AnimalVolant {
 

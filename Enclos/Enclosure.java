@@ -1,6 +1,6 @@
-package Zoo.Enclos;
+package Enclos;
 
-import Zoo.Animal.Animal;
+import Animal.Animal;
 
 import java.util.ArrayList;
 

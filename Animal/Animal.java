@@ -1,4 +1,4 @@
-package Zoo.Animal;
+package Animal;
 
 	
 	// TODO : -add l'age fonct(viellissement, mort), -Revive des immortels(dragons, phoenixs, nymphes)

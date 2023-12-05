@@ -1,4 +1,4 @@
-package Zoo.Animal;
+package Animal;
 
 public interface AnimalTerrestre {
     public void walk();
