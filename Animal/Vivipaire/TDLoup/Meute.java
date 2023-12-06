@@ -20,7 +20,7 @@ public class Meute {
 		CoupleLoup.setWolfPack(this);
 		this.loups = new ArrayList<Loup>();
 		this.howl = howl;
-		System.out.println("Une nouvelle meute a été crée ! (Couple de la meute : " + this.CoupleLoup.getWolfMale().getName() +
+		System.out.println("Une nouvelle meute a ett crée ! (Couple de la meute : " + this.CoupleLoup.getWolfMale().getName() +
 						   " & " + this.CoupleLoup.getWolfFemale().getName() + ", cri : \"" + this.howl + "\")");
 	}
 
@@ -73,12 +73,12 @@ public class Meute {
 		maleAlphaLoup.setWolfPack(this);
 	}
 	
-	public void addWolf(Loup Loup) {
+	public String addWolf(Loup Loup) {
 		// On n'ajoute pas un loupn déjà présent dans le couple
 		if (!this.getWolfs().contains(Loup)) {
 			loups.add(Loup);
 			Loup.setWolfPack(this);
-			System.out.println(Loup.getName() + " a été ajouté à la meute");
+			return(Loup.getName() + " a ete ajouté à la meute");
 		}
 	}
 	
@@ -86,14 +86,14 @@ public class Meute {
 		if(loups.contains(Loup)) {
 			loups.remove(Loup);
 			Loup.setWolfPack(null);
-			System.out.println(Loup.getName() + " a été retiré de la meute");
+			System.out.println(Loup.getName() + " a ete retiré de la meute");
 		}
 	}
 	
-	public void setOmegaWolf(Loup Loup) {
+	public String setOmegaWolf(Loup Loup) {
 		if(loups.contains(Loup)) {
 			Loup.setRankDomination('ω');
-			System.out.println(Loup.getName() + " est maintenant un loup Oméga");
+			return(Loup.getName() + " est maintenant un loup Omega");
 		}
 	}
 	
@@ -115,7 +115,7 @@ public class Meute {
 		if(this.getWolfs().contains(Loup)) {
 			char oldRank = Loup.getRankDomination();
 			Loup.setRankDomination(SystemeLoup.decreaseRank(Loup.getRankDomination()));
-			System.out.println(Loup.getName() + " a vu son rang diminué (" +
+			System.out.println(Loup.getName() + " a vu son rang diminue (" +
 					oldRank + " -> " + Loup.getRankDomination() + ")");
 		}
 		else {

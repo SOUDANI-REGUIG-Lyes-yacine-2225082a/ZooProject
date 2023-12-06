@@ -23,10 +23,10 @@ public class LoupTest {
 
     @BeforeEach
     public void setUp() {
-        alphaLoup = new Loup("Alpha", 'M', 80, 7,1 ,'α');
-        betaLoup = new Loup("Beta", 'M', 70, 6, 8 , 'β');
+        alphaLoup = new Loup("Alpha", 'm', 80, 7,1 ,'α');
+        betaLoup = new Loup("Beta", 'm', 70, 6, 8 , 'β');
         meute = new Meute(Colonie, CoupleLoup, howl);
-        loup = new Loup("TestLoup", 'M', 50, 5, 9, 'α');
+        loup = new Loup("TestLoup", 'm', 50, 5, 9, 'α');
     }
         
 
