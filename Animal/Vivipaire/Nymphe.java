@@ -13,7 +13,7 @@ public class Nymphe extends Vivipaire implements AnimalTerrestre, Resurrection {
 	public String walk() {
 		return(super.getName() + " se déplace gracieusement ");
 	}//.
-
+//..
 	@Override 
 	public String revive(Animal creature) {
 		if (!creature.isAlive()) {
