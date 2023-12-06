@@ -5,13 +5,12 @@ import Animal.Resurrection;
 
 public class Phoenix extends Ovipaire implements AnimalVolant, Resurrection{
 
-    public Phoenix(String name, char sex, int weight, int size) {
-        super(name, sex, weight, size);
+    public Phoenix(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
     }
-
     @Override
-    public void fly() {
-        System.out.println(super.getName() + " vole de manière royal !");
+    public String fly() {
+        return(super.getName() + " vole de manière royal !");
     }
     
     @Override 

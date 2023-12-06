@@ -5,13 +5,13 @@ import Animal.Resurrection;
 
 public class Nymphe extends Vivipaire implements AnimalTerrestre, Resurrection {
 
-	public Nymphe(String name, char sex, int weight, int size) {
-		super(name, sex, weight, size);
-	}
+	public Nymphe(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
+    }
 
 	@Override
-	public void walk() {
-		System.out.println(super.getName() + " se déplace gracieusement ");
+	public String walk() {
+		return(super.getName() + " se déplace gracieusement ");
 	}
 
 	@Override 

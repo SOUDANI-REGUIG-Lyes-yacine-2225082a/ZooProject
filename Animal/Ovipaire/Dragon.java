@@ -15,18 +15,18 @@ public class Dragon extends Ovipaire implements AnimalVolant, AnimalMarin, Resur
      * @param size
      * @Description
      */
-    public Dragon(String name, char sex, int weight, int size) {
-        super(name, sex, weight, size);
+    public Dragon(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
     }
 
     @Override
-    public void fly() {
-        System.out.println(super.getName() + " vole majestueusement !");
+    public String fly() {
+        return(super.getName() + " vole majestueusement !");
     }
 
     @Override
-    public void swim() {
-    	System.out.println(super.getName() + " nage parce que pourquoi pas");
+    public String swim() {
+    	return(super.getName() + " nage parce que pourquoi pas");
     }
     
     @Override 
@@ -39,5 +39,6 @@ public class Dragon extends Ovipaire implements AnimalVolant, AnimalMarin, Resur
         }
     }
 
+	
 }
 

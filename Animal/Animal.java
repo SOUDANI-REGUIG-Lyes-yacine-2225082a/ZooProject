@@ -9,31 +9,34 @@ public abstract class Animal {
     private char sex; // m : male, f : female
     private int weight;
     private int size; // en centim�tres
+    private int age;
     private boolean hunger; // FALSE = pas faim / TRUE = a faim
     private boolean sleep; // FALSE = ne dort pas / TRUE = dort
     private boolean health; // FALSE = mauvaise sant� / TRUE = bonne sante
     
     private boolean isAlive;
 
-    public Animal(String name, char sex, int weight, int size) {
+    public Animal(String name, char sex, int weight, int size, int age) {
         this.name = name;
         setSex(sex);
         this.weight = weight;
         this.size = size;
+        this.age = age;
         this.hunger = false;
         this.sleep = false;
         this.health = true;
     }
 
-    public void eat() {
+    public String eat() {
         if(this.hunger) {
             this.hunger = false;
-            System.out.println(this.name + " est en train de manger");
+            return(this.name + " est en train de manger");
         }
+        return null;
     }
 
-    public void sound() {
-        System.out.println(this.name + " �met un son");
+    public String sound() {
+        return(this.name + " emet un son");
     }
 
     public void heal() {
@@ -74,6 +77,18 @@ public abstract class Animal {
         this.name = name;
     }
 
+    public void setHealth(boolean health) {
+    	this.health = health;
+    }
+    
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public void setAge(int age) {
+    	this.age = age;
+    }
+    
     private void setSex(char sex) {
         if(sex == 'm' || sex == 'f') {
             this.sex = sex;
@@ -81,7 +96,16 @@ public abstract class Animal {
             System.out.println("Le sexe doit �tre 'm' ou 'f' !");
         }
     }
+    
+    public void setHunger(boolean hunger) {
+        this.hunger = hunger;
+    }
+    
+    
 
+    public boolean isHunger() {
+    	return hunger;
+    }
     public boolean isSleep() {
         return sleep;
     }
@@ -90,10 +114,7 @@ public abstract class Animal {
         return health;
     }
     
-    public void setAlive(boolean alive) {
-        isAlive = alive;
-    }
-
+    
     public boolean isAlive() {
         return isAlive;
     }

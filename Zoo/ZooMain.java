@@ -107,7 +107,7 @@ public class ZooMain {
 		Kaaris kaaris = Kaaris.getEmployee().initEmployee("Zoubida", 'f', 89);
 		Zoo zoo = Zoo.getZoo().initZoo("Zoo GrindLP", kaaris, 10);
 
-		Dragon dragon1 = new Dragon("Drako", 'm', 150, 10);
+		Dragon dragon1 = new Dragon("Drako", 'm', 150, 1,10);
 		Voliere<Dragon> dragonEnclos = new Voliere("Enclos des dragons", 500, 10, 500);
 		zoo.addEnclosure(dragonEnclos);
 		dragonEnclos.addAnimal(dragon1);

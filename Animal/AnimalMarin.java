@@ -1,5 +1,5 @@
 package Animal;
 
 public interface AnimalMarin {
-    public void swim();
+    public String swim();
 }

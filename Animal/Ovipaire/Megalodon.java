@@ -3,12 +3,12 @@ import Animal.AnimalMarin;
 
 public class Megalodon extends Ovipaire implements AnimalMarin {
 
-    public Megalodon(String name, char sex, int weight, int size) {
-        super(name, sex, weight, size);
+    public Megalodon(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
     }
 
     @Override
-    public void swim() {
-        System.out.println(super.getName() + " nage à la recherche de bouffe");
+    public String swim() {
+        return(super.getName() + " nage à la recherche de bouffe");
     }
 }

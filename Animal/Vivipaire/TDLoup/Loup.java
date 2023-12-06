@@ -1,6 +1,7 @@
 package Animal.Vivipaire.TDLoup;
 import Animal.Vivipaire.Vivipaire;
 
+
 import Zoo.SystemeLoup;
 import Animal.AnimalTerrestre;
 
@@ -18,8 +19,9 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     // TODO: Trouver autre chose que donnée membre
     private Meute Meute;
 
-    public Loup(String name, char sex, int weight, int size, char rankDomination) {
-        super(SystemeLoup.toTitle(name), sex, weight, size);
+    public Loup(String name, char sex, int weight, int size, int age, char rankDomination) {
+        super(SystemeLoup.toTitle(name), sex, weight, size, age);
+        this.rankDomination = rankDomination;
         
         // On détermine la force à 3 si le loup est un alphal
         if (rankDomination == 'α') {
@@ -38,16 +40,20 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         }
     }
 
-    public void sound(String howl)  { // howl = hurlement
+    
+
+	public void sound(String howl)  { // howl = hurlement
         System.out.println(super.getName() + " hurle \"" + howl + "\"");
     }
-
-    public void sound() {
+    
+    @Override
+    public String sound() {
     	if (this.Meute != null) {
     		this.sound(Meute.getHowl());
     	} else {
     		this.sound("Aoouuuuuh");
     	}
+		return null;
     }
 
     public void hear() {
@@ -224,8 +230,8 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     }
 
     @Override
-    public void walk() {
-        System.out.println(super.getName() + " vagabonde !");
+    public String walk() {
+        return(super.getName() + " vagabonde !");
     }
 
     public int getLevel() {

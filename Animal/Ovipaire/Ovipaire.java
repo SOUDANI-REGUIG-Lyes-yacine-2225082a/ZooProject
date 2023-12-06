@@ -3,8 +3,8 @@ import Animal.Animal;
 
 public abstract class Ovipaire extends Animal {
 
-    public Ovipaire(String name, char sex, int weight, int size) {
-        super(name, sex, weight, size);
+    public Ovipaire(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
     }
 
     public void wander() {

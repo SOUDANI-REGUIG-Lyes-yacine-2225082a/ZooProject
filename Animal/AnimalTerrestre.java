@@ -1,5 +1,5 @@
 package Animal;
 
 public interface AnimalTerrestre {
-    public void walk();
+    public String walk();
 }

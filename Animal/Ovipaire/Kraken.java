@@ -3,12 +3,11 @@ import Animal.AnimalMarin;
 
 public class Kraken extends Ovipaire implements AnimalMarin {
 
-    public Kraken(String name, char sex, int weight, int size) {
-        super(name, sex, weight, size);
+    public Kraken(String name, char sex, int weight, int size, int age) {
+        super(name, sex, weight, size, age);
     }
-
     @Override
-    public void swim() {
-        System.out.println(super.getName() + " nage ");
+    public String swim() {
+    	return(super.getName() + " nage ");
     }
 }

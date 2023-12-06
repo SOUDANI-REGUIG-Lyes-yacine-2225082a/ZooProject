@@ -72,7 +72,7 @@ public class CoupleLoup {
 	        	Scanner sc = new Scanner(System.in);
 	        	System.out.println("Veuillez saisir un nom pour le loup " + (i+1) + " : ");
 	        	String str = sc.nextLine();
-	            Loup Loup = new Loup(str, charSex, 2, 7, 'β');
+	            Loup Loup = new Loup(str, charSex, 2, 7, 5 , 'β');
 	            wolfsBorn.add(Loup);
 	            System.out.println("Bébé " + Loup.getName() + " est arrivé ! Félicitations !");
 	        }
