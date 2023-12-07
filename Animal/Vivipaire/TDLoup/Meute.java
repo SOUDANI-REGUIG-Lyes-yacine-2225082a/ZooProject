@@ -79,7 +79,8 @@ public class Meute {
 			loups.add(Loup);
 			Loup.setWolfPack(this);
 			return(Loup.getName() + " a ete ajouté à la meute");
-		}
+		}else
+		return(Loup.getName() + " est déjà dans la meute");
 	}
 	
 	public void removeWolf(Loup Loup) {
@@ -94,7 +95,8 @@ public class Meute {
 		if(loups.contains(Loup)) {
 			Loup.setRankDomination('ω');
 			return(Loup.getName() + " est maintenant un loup Omega");
-		}
+		}else
+		return(Loup.getName() + " n'est pas dans la meute");
 	}
 	
 	public String getHowl() {

@@ -20,7 +20,7 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     private Meute Meute;
 
     public Loup(String name, char sex, int weight, int size, int age, char rankDomination) {
-        super(SystemeLoup.toTitle(name), sex, weight, size, age);
+        super(name, sex, weight, size, age);
         this.rankDomination = rankDomination;
         
         // On détermine la force à 3 si le loup est un alphal

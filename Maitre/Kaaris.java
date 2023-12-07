@@ -9,18 +9,15 @@ public final class Kaaris {
     private String name;
     private char sex;
     private int age;
-    private static Kaaris Kaaris= new Kaaris();
+    
 
-    public static Kaaris getEmployee() {
-        return Kaaris;
+    public Kaaris(String name, char sex, int age){
+        this.setName(name);
+        this.setAge(age);
+        this.setSex(sex);
+              
     }
 
-    public Kaaris initEmployee(String name, char sex, int age) {
-    	Kaaris.setName(name);
-        Kaaris.setSex(sex);
-        Kaaris.setAge(age);
-        return Kaaris;
-    }
 
 
 

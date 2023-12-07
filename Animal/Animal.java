@@ -4,7 +4,7 @@ package Animal;
 	// TODO : -add l'age fonct(viellissement, mort), -Revive des immortels(dragons, phoenixs, nymphes)
 	// TODO : -add la période d'incubation ou gestation
 
-public abstract class Animal {
+public class Animal {
     private String name;
     private char sex; // m : male, f : female
     private int weight;
