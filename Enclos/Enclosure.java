@@ -79,11 +79,9 @@ public abstract class Enclosure <T> {
         System.out.println("L'enclos " + this.name + " est maintenant propre");
     }
 
-    public void showAnimals() {
-        /*for(Animal animal : this.animals) {
-            System.out.println(animal);
-        }*/
-    }
+    public List<T> showAnimals() {
+		return animals;
+	}
 
     public String getName() {
         return name;

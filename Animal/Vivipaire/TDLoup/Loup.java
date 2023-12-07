@@ -47,13 +47,12 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     }
     
     @Override
-    public String sound() {
+    public void sound() {
     	if (this.Meute != null) {
     		this.sound(Meute.getHowl());
     	} else {
     		this.sound("Aoouuuuuh");
     	}
-		return null;
     }
 
     public void hear() {
@@ -261,6 +260,8 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     public void setRankDomination(char rankDomination) {
         this.rankDomination = rankDomination;
     }
+    
+    
 
     @Override
     public String toString() {

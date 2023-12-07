@@ -4,18 +4,6 @@ package Animal;
 	// TODO : -add l'age fonct(viellissement, mort), -Revive des immortels(dragons, phoenixs, nymphes)
 	// TODO : -add la période d'incubation ou gestation
 
-public class Animal {
-    private String name;
-    private char sex; // m : male, f : female
-    private int weight;
-    private int size; // en centim�tres
-    private int age;
-    private boolean hunger; // FALSE = pas faim / TRUE = a faim
-    private boolean sleep; // FALSE = ne dort pas / TRUE = dort
-    private boolean health; // FALSE = mauvaise sant� / TRUE = bonne sante
-    
-    private boolean isAlive;
-
     public abstract class Animal implements Runnable{
 	private String name;
 	private char sex; // m : male, f : female
@@ -139,6 +127,10 @@ public class Animal {
 		return health;
 	}
 
+	public void setHealth(boolean health) {
+		this.health = health;
+	}
+
 	public void setAlive(boolean alive) {
 		isAlive = alive;
 	}
@@ -146,7 +138,23 @@ public class Animal {
 	public boolean isAlive() {
 		return isAlive;
 	}
+	
 
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getHunger() {
+		return hunger;
+	}
+
+	public void setHunger(int hunger) {
+		this.hunger = hunger;
+	}
 
 	public void makeOld() {
 		if(isAlive) {
@@ -181,4 +189,4 @@ public class Animal {
 				'}';
 	}
 }
-}
+

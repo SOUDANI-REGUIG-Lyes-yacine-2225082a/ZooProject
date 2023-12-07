@@ -1,6 +1,8 @@
 package TestUnit;
 import Animal.Ovipaire.Dragon;
 import Animal.Animal;
+
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -8,18 +10,17 @@ import org.junit.jupiter.api.Test;
 //..testpush
 public class AnimalTest {
 
-    private Dragon animal;
+    
 
-    @BeforeEach
-    public void setUp() {
-        animal = new Dragon("TestAnimal", 'M', 50, 54, 5);
-    }
+ 
+        Animal animal = new Dragon("TestAnimal", 'M', 50, 54, 5);
+
   
 
     @Test
     public void testEatWhenHungry() {
-        animal.setAlive(true);
-        animal.setHunger(true);
+    	animal.setAlive(true);
+        animal.setHunger(10);
 
         assertNotNull(animal.eat());  // Use assertNotNull instead of assertEquals
         assertFalse(animal.isHunger());
@@ -28,14 +29,14 @@ public class AnimalTest {
     @Test
     public void testEatWhenNotHungry() {
         animal.setAlive(true);
-        animal.setHunger(false);
+        animal.setHunger(100);
 
         assertNull(animal.eat());
     }
 
     @Test
     public void testSound() {
-        assertEquals("TestAnimal emet un son", animal.sound());
+        assertEquals(animal.getName() + " emet un son", animal.sound());
     }
 
     @Test
