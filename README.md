@@ -29,4 +29,4 @@ https://mickael-martin-nevot.com/univ-amu/iut/but-informatique/qualite-de-develo
 - Rayan PIOCT
 - Lyes-Yacine SOUDANI-REGUIG
 
-Bonne simulation de !
+Bonne simulation !
