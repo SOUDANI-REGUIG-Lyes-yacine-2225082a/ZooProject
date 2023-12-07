@@ -18,7 +18,58 @@ import Maitre.Kaaris;
 
 
 public class main {
-    public static void main(String[] args){
+
+    private static final Scanner scanner  = new Scanner(System.in);
+	private static final List<Thread> creatureThreads = new ArrayList<>();
+	static Enclos<Animal> ViceCity = new Enclos<Animal>("ViceCity", 10000, 100);
+	static DisplayMenu managerAnimal = new DisplayMenu(ViceCity);
+	
+	public static void main(String[] args) {
+        int mainChoice;
+        do {
+            DisplayMenu.MainMenu();
+            mainChoice = scanner.nextInt();
+
+            switch (mainChoice) {
+                case 1:
+                	managerAnimal.runAnimalMenu();
+                    break;
+                case 2:
+                	managerAnimal.runEnclosMenu();
+                    break;
+                case 3:
+                    // Ajouter la logique pour simuler le passage du temps
+                    System.out.println("Simulation du passage du temps...");
+                    startCreatureThreads(); // Démarrer les threads des créatures
+                    break;
+                case 4:
+                    stopCreatureThreads(); // Arrêter les threads des créatures avant de quitter
+                    System.out.println("Au revoir !");
+                    break;
+                default:
+                    System.out.println("Option invalide. Veuillez choisir à nouveau.");
+            }
+        } while (mainChoice != 4);
+        managerAnimal.stopScanner();
+    }
+
+    private static void startCreatureThreads() {
+        for (Animal animal : ViceCity.showAnimals()) {
+            Thread creatureThread = new Thread(animal);
+            creatureThreads.add(creatureThread);
+            creatureThread.start();
+        }
+    }
+
+    private static void stopCreatureThreads() {
+        for (Thread thread : creatureThreads) {
+            thread.interrupt();
+        }
+    }
+
+    // ATTENTION: Main du dessous est un test celui du dessus marche et simule avec des menus
+    
+    //public static void main(String[] args){
         // Initialisation du maitre
         Kaaris kaaris = new Kaaris("Kaaris", 'M', 45);
         // Initialisation du zoo
@@ -74,5 +125,5 @@ public class main {
         
 
 
-    }
+    //}
 }
