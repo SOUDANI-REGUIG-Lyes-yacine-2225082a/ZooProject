@@ -11,12 +11,12 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
 
     private int age; // 1 = jeune / 2 = adulte / 3 = vieux
     private int strength; // 1 = pas fort / 2 = moyen fort / 3 = très fort
-    private int domination; // facteur de domination TODO: correspondant a  la difference entre les dominations exercees et celles subies)
-    private char rankDomination; // TODO: lettre de l'alphabet grec qui represente le niveau de domination dans la meute du loup
-    private int level; // TODO: correspondant au critere de qualite subjectif d'un loup, male comme femelle
-    // calculé en fonction de la catégorie d'âge, de la force, du facteur de domination et du rang
-    private int violence; // TODO: facteur de violence (impétuosité)
-    // TODO: Trouver autre chose que donnée membre
+    private int domination; 
+    private char rankDomination; 
+    private int level;
+    
+    private int violence; 
+    
     private Meute Meute;
 
     public Loup(String name, char sex, int weight, int size, int age, char rankDomination) {
@@ -71,10 +71,10 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         }
     }*/
 
-    public void makeOld() {
+    public String makeOld() {
         if(this.age == 3) {
             //this.leavePack();
-            System.out.println(super.getName() + " meurt"); // TODO: détruire l'objet this
+            return(super.getName() + " meurt"); // TODO: détruire l'objet this
         } else {
             ++this.age;
             String ageStr = "";
@@ -86,7 +86,7 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
                     ageStr = "vieux";
                     break;
             }
-            System.out.println(super.getName() + " a grandit et est maintenant " + ageStr);
+            return(super.getName() + " a grandit et est maintenant " + ageStr);
         }
     }
 

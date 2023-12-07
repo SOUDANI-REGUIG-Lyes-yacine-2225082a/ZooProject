@@ -13,7 +13,7 @@ public class DragonTest {
 
     @BeforeEach
     public void setUp() {
-        dragon = new Dragon("Drogon", 'M', 500, 10, 41);
+        dragon = new Dragon("Drogon", 'm', 500, 10, 41);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class DragonTest {
 
     @Test
     public void testReviveWhenCreatureIsDead() {
-        Dragon creature = new Dragon("DeadCreature", 'F', 100, 5, 23);
+        Dragon creature = new Dragon("DeadCreature", 'f', 100, 5, 23);
         creature.setAlive(false);
 
         assertEquals("DeadCreature est en train de ressusciter", dragon.revive(creature));

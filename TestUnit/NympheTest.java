@@ -13,7 +13,7 @@ public class NympheTest {
 
     @BeforeEach
     public void setUp() {
-        nymphe = new Nymphe("Nymphadora", 'F', 30, 1,4);
+        nymphe = new Nymphe("Nymphadora", 'f', 30, 1,4);
     }
 
     @Test
@@ -23,7 +23,7 @@ public class NympheTest {
 
     @Test
     public void testReviveWhenCreatureIsDead() {
-        Nymphe creature = new Nymphe("DeadCreature", 'M', 50, 2,7200);
+        Nymphe creature = new Nymphe("DeadCreature", 'm', 50, 2,7200);
         creature.setAlive(false);
 
         assertEquals("DeadCreature est en train de ressusciter", nymphe.revive(creature));

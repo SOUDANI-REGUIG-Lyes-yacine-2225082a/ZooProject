@@ -14,9 +14,9 @@ public class MeuteTest {
 
     @BeforeEach
     public void setUp() {
-        alphaMale = new Loup("AlphaMale", 'M', 50, 5, 1,'α');
-        alphaFemale = new Loup("AlphaFemale", 'F', 45, 4, 7,'α');
-        omegaLoup = new Loup("OmegaLoup", 'M', 40, 3, 9 ,'ω');
+        alphaMale = new Loup("AlphaMale", 'm', 50, 5, 1,'α');
+        alphaFemale = new Loup("AlphaFemale", 'f', 45, 4, 7,'α');
+        omegaLoup = new Loup("OmegaLoup", 'm', 40, 3, 9 ,'ω');
 
         CoupleLoup coupleLoup = new CoupleLoup(alphaMale, alphaFemale);
         meute = new Meute(null, coupleLoup, "Aouuuuuh");

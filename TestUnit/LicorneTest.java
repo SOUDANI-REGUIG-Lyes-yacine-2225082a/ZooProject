@@ -13,7 +13,7 @@ public class LicorneTest {
 
     @BeforeEach
     public void setUp() {
-        licorne = new Licorne("Luna", 'F', 300, 8, 4);
+        licorne = new Licorne("Luna", 'f', 300, 8, 4);
     }
 
     @Test

@@ -14,9 +14,9 @@ public class CoupleLoupTest {
 
 	@BeforeEach
 	public void setUp() {
-		alphaMale = new Loup("AlphaMale", 'M', 50, 5, 100,  'α');
-		alphaFemale = new Loup("AlphaFemale", 'F', 45, 4, 97,'α');
-		betaMale = new Loup("BetaMale", 'M', 40, 3, 15,'β');
+		alphaMale = new Loup("AlphaMale", 'm', 50, 5, 100,  'α');
+		alphaFemale = new Loup("AlphaFemale", 'f', 45, 4, 97,'α');
+		betaMale = new Loup("BetaMale", 'm', 40, 3, 15,'β');
 
 		coupleLoup = new CoupleLoup(alphaMale, alphaFemale);
 	}
@@ -37,7 +37,7 @@ public class CoupleLoupTest {
 
 	@Test
 	public void testSetWolfMaleWrongSex() {
-		Loup female = new Loup("Female", 'F', 40, 3, 67,'β');
+		Loup female = new Loup("Female", 'f', 40, 3, 67,'β');
 		coupleLoup.setWolfMale(female);
 
 		assertNull(coupleLoup.getWolfMale());
@@ -45,7 +45,7 @@ public class CoupleLoupTest {
 
 	@Test
 	public void testSetWolfFemaleWrongSex() {
-		Loup male = new Loup("Male", 'M', 40, 3, 49,'β');
+		Loup male = new Loup("Male", 'm', 40, 3, 49,'β');
 		coupleLoup.setWolfFemale(male);
 
 		assertNull(coupleLoup.getWolfFemale());

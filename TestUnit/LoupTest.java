@@ -1,63 +1,75 @@
-package TestUnit;
-
-import Animal.Vivipaire.TDLoup.Colonie;
-import Animal.Vivipaire.TDLoup.CoupleLoup;
-import Animal.Vivipaire.TDLoup.Loup;
-import Animal.Vivipaire.TDLoup.Meute;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+//insert a class test of the java class Loup.java here
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 public class LoupTest {
 
-	private Colonie Colonie;
-	private CoupleLoup CoupleLoup;
-	private ArrayList<Loup> loups;
-	private String howl;
-    private Loup alphaLoup;
-    private Loup betaLoup;
-    private Meute meute;
-    private Loup loup;
+	Loup loup1, loup2, loup3, loup4;
+	Meute meute1;
+	ArrayList<Loup> listLoup;
 
-    @BeforeEach
-    public void setUp() {
-        alphaLoup = new Loup("Alpha", 'm', 80, 7,1 ,'α');
-        betaLoup = new Loup("Beta", 'm', 70, 6, 8 , 'β');
-        meute = new Meute(Colonie, CoupleLoup, howl);
-        loup = new Loup("TestLoup", 'm', 50, 5, 9, 'α');
-    }
-        
+	@Before
+	public void setUp() throws Exception {
+		loup1 = new Loup("Gris", 1, 1, 1, 'α');
+		loup2 = new Loup("Noir", 2, 2, 2, 'α');
+		loup3 = new Loup("Blanc", 3, 3, 3, 'α');
+		loup4 = new Loup("Rouge", 4, 4, 4, 'α');
+		listLoup = new ArrayList<Loup>();
+		listLoup.add(loup1);
+		listLoup.add(loup2);
+		listLoup.add(loup3);
+		listLoup.add(loup4);
+		meute1 = new Meute(listLoup);
+	}
 
+	@After
+	public void tearDown() throws Exception {
+		loup1 = null;
+		loup2 = null;
+		loup3 = null;
+		loup4 = null;
+		listLoup = null;
+		meute1 = null;
+	}
 
-    @Test
-    public void testDominateBetaLoup() {
-        alphaLoup.setWolfPack(meute);
-        betaLoup.setWolfPack(meute);
+	@Test
+	public void testHowlDomination() {
+		loup1.howlDomination(loup2);
+		assertEquals(loup1.getViolence(), 2);
+	}
 
-        alphaLoup.dominate(betaLoup);
+	@Test
+	public void testHowlSoumission() {
+		loup2.howlSoumission(loup1);
+		assertEquals(loup2.getViolence(), 3);
+	}
 
-        assertEquals(1, alphaLoup.getRankDomination());
-        assertEquals(0, betaLoup.getRankDomination());
-        assertEquals('α', alphaLoup.getRankDomination());
-        assertEquals('β', betaLoup.getRankDomination());
-        assertEquals(2, alphaLoup.getLevel());
-        assertEquals(1, betaLoup.getLevel());
-    }
+	@Test
+	public void testHowlAggresive() {
+		loup3.howlAggresive(loup4);
+		assertEquals(loup3.getViolence(), 5);
+	}
 
-    @Test
-    public void testMakeOld() {
-        // Set the age to 2 for testing the case where the age is not 3
-        loup.setAge(2);
+	@Test
+	public void testWalk() {
+		assertEquals(loup1.walk(), "Gris vagabonde !");
+	}
 
-        // Call the makeOld method
-        loup.makeOld();
+	@Test
+	public void testGetLevel() {
+		assertEquals(loup1.getLevel(), 1);
+	}
 
-        // Check if the age has been incremented
-        assertEquals(3, loup.getAge(), "Age should be incremented to 3");
+	@Test
+	public void testGetViolence() {
+		assertEquals(loup2.getViolence(), 2);
+	}
 
-        // You can add more assertions based on your specific requirements
-    }
-    // Add more tests as needed to cover other functionalities of the Loup class
-}
+	@Test
+	public void testGetRankDomination() {
+		assertEquals(loup3.getRankDomination

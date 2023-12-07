@@ -61,7 +61,7 @@ public abstract class Animal {
     public void wakeUp() {
         if(this.sleep) {
             this.sleep = false;
-            System.out.println(this.name + " se r�veille !");
+            System.out.println(this.name + " se reveille !");
         }
     }
 
@@ -93,7 +93,7 @@ public abstract class Animal {
         if(sex == 'm' || sex == 'f') {
             this.sex = sex;
         } else {
-            System.out.println("Le sexe doit �tre 'm' ou 'f' !");
+            System.out.println("Le sexe doit etre 'm' ou 'f' !");
         }
     }
     

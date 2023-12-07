@@ -1,5 +1,6 @@
 package TestUnit;
 import Animal.Ovipaire.Dragon;
+
 import Animal.Animal;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +13,7 @@ public class AnimalTest {
 
     @BeforeEach
     public void setUp() {
-        animal = new Dragon("TestAnimal", 'M', 50, 54, 5);
+        animal = new Dragon("TestAnimal", 'm', 50, 54, 5);
     }
   
 
@@ -62,7 +63,7 @@ public class AnimalTest {
 
         // Check if certain information is present in the string representation
         assertTrue(toStringResult.contains("name='TestAnimal'"));
-        assertTrue(toStringResult.contains("sex=M"));
+        assertTrue(toStringResult.contains("sex=m"));
         assertTrue(toStringResult.contains("weight=50"));
         assertTrue(toStringResult.contains("size=5"));
         assertTrue(toStringResult.contains("hunger=false"));
