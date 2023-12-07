@@ -3,6 +3,7 @@ package Enclos;
 import Animal.Animal;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Enclosure <T> {
     private String name;
@@ -22,15 +23,20 @@ public abstract class Enclosure <T> {
     }
 
     public void getInfos() {
-        System.out.println("Enclos : "+ this.name);
-        System.out.println("Superficie " + this.area);
-        System.out.println("Nombre max d'animaux : " + this.maxAnimal);
-        System.out.println("Nombre actuels d'animaux : " + this.nbAnimal);
-        System.out.println("Niveau de propret� : " + this.cleanliness + "/3");
-        for(T animal : animals) {
-            System.out.println(animal); // TODO: permettre de voir le type d'animal (Wolf, Tiger etc...)
-        }
-    }
+		System.out.println("Enclos : "+ this.name);
+		System.out.println("Superficie " + this.area);
+		System.out.println("Nombre max d'animaux : " + this.maxAnimal);
+		System.out.println("Nombre actuels d'animaux : " + this.nbAnimal);
+		System.out.println("Niveau de proprete : " + this.cleanliness + "/3");
+		System.out.println("Créatures présentes : ");
+		if (animals.isEmpty()) {
+			System.out.println("Aucune créature dans l'enclos pour l'instant");
+		}else {
+			for(T animal : animals) {
+				System.out.println(animal);
+			}
+		}
+	}
 
     public boolean addAnimal(T animal) {
         if(this.nbAnimal + 1 <= this.maxAnimal) {
