@@ -1,4 +1,4 @@
-//insert a class test of the java class Loup.java here
+package TestUnit;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
