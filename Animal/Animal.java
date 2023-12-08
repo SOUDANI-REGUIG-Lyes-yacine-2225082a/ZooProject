@@ -26,18 +26,11 @@ package Animal;
 		this.sleep = false;
 		this.health = true;
 	}
-
-	public void eat() {
-		if (isAlive) {
-			if (hunger < 100 && !sleep) {
-				hunger = hunger + 100;
-				System.out.println("Vous nourrissez " + name + " et sa faim et maintenant à " + hunger);
-			} else {
-				System.out.println("Vous ne pouvez pas nourrir " + name + " maintenant");
-			}
-		}
-	}
-
+	
+	
+	//elements avec thread
+	
+	//gestion de la faim
 	public void hunger() {
 		while (this.hunger > 0 && !Thread.interrupted()) {
 			try {
@@ -60,13 +53,21 @@ package Animal;
 		}
 	}
 	
-	
-	
-	
 
 	@Override
 	public void run() {
 		hunger();
+	}
+	
+	public void eat() {
+		if (isAlive) {
+			if (hunger < 100 && !sleep) {
+				hunger = hunger + 50;
+				System.out.println("Vous nourrissez " + name + " et sa faim et maintenant à " + hunger);
+			} else {
+				System.out.println("Vous ne pouvez pas nourrir " + name + " maintenant");
+			}
+		}
 	}
 
 	public void sound() {

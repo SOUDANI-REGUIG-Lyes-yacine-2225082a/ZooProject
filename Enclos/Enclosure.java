@@ -10,8 +10,8 @@ public abstract class Enclosure <T> {
     private int area;
     private int maxAnimal; // nombre maximums d'animaux
     private int nbAnimal; // nombre d'animaux en temps r�el
-    private ArrayList<T> animals;
-    private int cleanliness; // 3 = propre / 2 = �tat moyen / 1 = sale
+    private ArrayList<T> animals; // Animaux présent dans l'enclos
+    private int cleanliness; // 3 = mauvais / 2 = correct / 1 = bon
 
     public Enclosure(String name, int area, int maxAnimal) {
         this.name = name;
@@ -71,7 +71,7 @@ public abstract class Enclosure <T> {
         for(T animal : animals) {
             ((Animal) animal).eat();
         }
-        System.out.println("Tous les animaux de l'enclos " + this.name + " ont �t� nourris");
+        System.out.println("Tous les animaux de l'enclos " + this.name + " ont ete nourris");
     }
 
     public void clean() {

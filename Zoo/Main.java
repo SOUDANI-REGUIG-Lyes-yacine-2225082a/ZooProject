@@ -18,17 +18,17 @@ import Enclos.Voliere;
 import Maitre.Kaaris;
 
 
-public class main {
+public class Main {
 
     private static final Scanner scanner  = new Scanner(System.in);
 	private static final List<Thread> creatureThreads = new ArrayList<>();
 	static Enclos<Animal> ViceCity = new Enclos<Animal>("ViceCity", 10000, 100);
-	static DisplayMenu managerAnimal = new DisplayMenu(ViceCity);
+	static GererAnimaux managerAnimal = new GererAnimaux(ViceCity);
 	
 	public static void main(String[] args) {
         int mainChoice;
         do {
-            DisplayMenu.MainMenu();
+            GererAnimaux.MainMenu();
             mainChoice = scanner.nextInt();
 
             switch (mainChoice) {
