@@ -12,21 +12,14 @@ public final class Zoo {
     private Kaaris kaaris;
     private int maxEnclosure;
     private ArrayList<Enclosure> enclosures;
-    private static Zoo ZOO = new Zoo();
-
-    public static Zoo getZoo() {
-        return ZOO;
+    
+    public Zoo(String name, Kaaris kaaris, int maxEnclosure) {
+        this.name = name;
+        this.kaaris = kaaris;
+        this.maxEnclosure = maxEnclosure;
+        this.enclosures = new ArrayList<Enclosure>();
     }
 
-    public Zoo initZoo(String name, Kaaris kaaris, int maxEnclosure) {
-        ZOO.setName(name);
-        ZOO.setEmployee(kaaris);
-        ZOO.setMaxEnclosure(maxEnclosure);
-        ZOO.setEnclosures(new ArrayList<Enclosure>());
-        return ZOO;
-    }
-
-    private Zoo() { }
 
     public void addEnclosure(Enclosure enclosure) {
         this.enclosures.add(enclosure);

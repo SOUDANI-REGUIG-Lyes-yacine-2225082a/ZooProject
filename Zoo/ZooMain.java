@@ -104,8 +104,8 @@ public class ZooMain {
 		System.out.println("Vous avez décidé de lancer la simulation");
 		System.out.println("Nous vous laissons les découvrir au fur et à mesure de la simulation.");
 		System.out.println("Bonne simulation !\n");
-		Kaaris kaaris = Kaaris.getEmployee().initEmployee("Zoubida", 'f', 89);
-		Zoo zoo = Zoo.getZoo().initZoo("Zoo GrindLP", kaaris, 10);
+		Kaaris kaaris = new Kaaris("Zoubida", 'f', 89);
+		Zoo zoo = new Zoo("Zoo GrindLP", kaaris, 10);
 
 		Dragon dragon1 = new Dragon("Drako", 'm', 150, 1,10);
 		Voliere<Dragon> dragonEnclos = new Voliere("Enclos des dragons", 500, 10, 500);

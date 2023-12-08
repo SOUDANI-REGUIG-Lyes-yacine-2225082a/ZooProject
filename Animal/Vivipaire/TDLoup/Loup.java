@@ -20,7 +20,7 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     private Meute Meute;
 
     public Loup(String name, char sex, int weight, int size, int age, char rankDomination) {
-        super(SystemeLoup.toTitle(name), sex, weight, size, age);
+        super(name, sex, weight, size, age);
         this.rankDomination = rankDomination;
         
         // On détermine la force à 3 si le loup est un alphal
@@ -47,13 +47,12 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     }
     
     @Override
-    public String sound() {
+    public void sound() {
     	if (this.Meute != null) {
     		this.sound(Meute.getHowl());
     	} else {
     		this.sound("Aoouuuuuh");
     	}
-		return null;
     }
 
     public void hear() {
@@ -71,26 +70,10 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         }
     }*/
 
-    public String makeOld() {
-        if(this.age == 3) {
-            //this.leavePack();
-            return(super.getName() + " meurt"); // TODO: détruire l'objet this
-        } else {
-            ++this.age;
-            String ageStr = "";
-            switch (this.age) {
-                case 2:
-                    ageStr = "adulte";
-                    break;
-                case 3:
-                    ageStr = "vieux";
-                    break;
-            }
-            return(super.getName() + " a grandit et est maintenant " + ageStr);
-        }
-    }
+    
+        
 
-    private void winDomination(Loup Loup) {
+    public void winDomination(Loup Loup) {
         // On réequilibre le facteur de domination
         this.incDomination();
         Loup.decDomination();
@@ -102,7 +85,7 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         System.out.println(super.getName() + " a dominé le loup " + Loup.getName());
     }
 
-    private void loseDomination(Loup Loup) {
+    public void loseDomination(Loup Loup) {
         // On réequilibre le facteur de domination
         this.decDomination();
         Loup.incDomination();
@@ -150,23 +133,23 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         ++this.domination;
     }
 
-    private void decDomination() {
+    public void decDomination() {
         if (this.domination != 0) {
             --this.domination;
         }
     }
 
-    private void incLevel() {
+    public void incLevel() {
         ++this.level;
     }
 
-    private void decLevel() {
+    public void decLevel() {
         if (this.level != 0) {
             --this.level;
         }
     }
 
-    private void switchRankDomination(Loup Loup) {
+    public void switchRankDomination(Loup Loup) {
         // on considére qu'un échange de rang s'effectue si l'agresseur a un rang inférieur à la cible
         if(SystemeLoup.isDominant(this.rankDomination, Loup.getRankDomination())) {
             char rankDominationTemp = this.rankDomination;
@@ -254,6 +237,10 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
 		return age;
 	}
 
+    public void setLevel(int level) {
+    	this.level = level;
+    }
+    
 	public void setWolfPack(Meute Meute) {
     	this.Meute = Meute;
     }
@@ -261,6 +248,8 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
     public void setRankDomination(char rankDomination) {
         this.rankDomination = rankDomination;
     }
+    
+    
 
     @Override
     public String toString() {

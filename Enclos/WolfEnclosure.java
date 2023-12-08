@@ -1,5 +1,7 @@
 package Enclos;
 
+import java.util.List;
+
 import Animal.Animal;
 import Animal.Vivipaire.TDLoup.*;
 
@@ -11,7 +13,7 @@ public class WolfEnclosure<T extends Animal> extends Enclosure<T> {
         this.Meute = Meute;
     }
     
-    public void showAnimals() {
+    public void showWolfs() {
     	System.out.println("L'enclos " + this.getName() + " contient les loups :");
     	this.Meute.showWolfPack();
     }
