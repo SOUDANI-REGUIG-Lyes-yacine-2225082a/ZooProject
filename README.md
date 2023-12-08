@@ -27,7 +27,7 @@ https://mickael-martin-nevot.com/univ-amu/iut/but-informatique/qualite-de-develo
 
 ## Utilisation
 
-1 -Le premier est composé de cas d'utilisation pour tester les fonctions de chaque animal afin de vérifier qu'ils fonctionnent correctement.
+1 -Le premier est composé de cas d'utilisation pour tester les fonctions de chaque animal afin de vérifier qu'ils fonctionnent correctement. En plus une petite simulation est proposer.
 
 2 - Le deuxième est composé du cas d'utilisation spécifique aux loups pour vérifier qu'ils fonctionnent correctement.
 
