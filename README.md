@@ -15,7 +15,7 @@ Voici le répertoire de notre projet JAVA pour la ressource R3.04.
 1. Clonez le dépôt.
 2. Accédez au projet.
 3. Lancez le main.
-4. Suivez les instruction du manuel !
+4. Suivez les exemples inscrit en commentaires ou prenez les instructions de la documentation !
 
 ## Sources et aides
 

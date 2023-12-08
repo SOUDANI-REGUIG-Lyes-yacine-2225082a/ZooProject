@@ -5,6 +5,7 @@ import Animal.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 
 public class Enclosure <T> {
 	private String name;
@@ -19,7 +20,17 @@ public class Enclosure <T> {
 	 *
 	 * @param <T> Type d'animal autorisé dans l'enclos.
 	 */
+=======
+public abstract class Enclosure <T> {
+    private String name;
+    private int area;
+    private int maxAnimal; // nombre maximums d'animaux
+    private int nbAnimal; // nombre d'animaux en temps r�el
+    private ArrayList<T> animals; // Animaux présent dans l'enclos
+    private int cleanliness; // 3 = mauvais / 2 = correct / 1 = bon
+>>>>>>> branch 'main' of https://github.com/SOUDANI-REGUIG-Lyes-yacine-2225082a/ZooProject.git
 
+<<<<<<< HEAD
 
 	/**
 	 * Constructeur de la classe Enclosure.
@@ -150,21 +161,87 @@ public class Enclosure <T> {
 	 * @return 
 	 */
 	public String getInfos() {
+=======
+    public Enclosure(String name, int area, int maxAnimal) {
+        this.name = name;
+        this.area = area;
+        this.maxAnimal = maxAnimal;
+        this.nbAnimal = 0;
+        this.animals = new ArrayList<T>();
+        this.cleanliness = 1;
+    }
+
+    public void getInfos() {
+		System.out.println("Enclos : "+ this.name);
+		System.out.println("Superficie " + this.area);
+		System.out.println("Nombre max d'animaux : " + this.maxAnimal);
+		System.out.println("Nombre actuels d'animaux : " + this.nbAnimal);
+		System.out.println("Niveau de proprete : " + this.cleanliness + "/3");
+		System.out.println("Créatures présentes : ");
+>>>>>>> branch 'main' of https://github.com/SOUDANI-REGUIG-Lyes-yacine-2225082a/ZooProject.git
 		if (animals.isEmpty()) {
 			System.out.println("Aucune créature dans l'enclos pour l'instant");
+		}else {
+			for(T animal : animals) {
+				System.out.println(animal);
+			}
 		}
-
-		return 
-		"Enclos ='" + this.name + '\'' +
-		", Superficie=" + this.area +
-		", Nombre max d'animaux=" + this.maxAnimal +
-		", Nombre actuel d'animaux=" + this.nbAnimal +
-		", Niveau de propreté=" + this.cleanliness +
-		'}';
-
-
-
 	}
+
+    public boolean addAnimal(T animal) {
+        if(this.nbAnimal + 1 <= this.maxAnimal) {
+            if(!this.animals.contains(animal)) {
+                this.animals.add(animal);
+                ++this.nbAnimal;
+                System.out.println(((Animal) animal).getName() + " a �t� ajout� �l'enclos " + this.name + " ("+ this.nbAnimal +"/"+ this.maxAnimal +")");
+            } else {
+                System.out.println(((Animal) animal).getName() + " est d�j� dans l'enclos " + this.name);
+                return false;
+            }
+        } else {
+            System.out.println("Nombre maximal d'animaux atteint pour l'enclos " + this.name + " !");
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeAnimal(T animal) {
+        if(this.animals.contains(animal)) {
+            this.animals.remove(animal);
+            --this.nbAnimal;
+           System.out.println(((Animal) animal).getName() + " a �t� enlev� � l'enclos " + this.name);
+        } else {
+            System.out.println("L'animal n'est pas dans l'enclos " + this.name);
+            return false;
+        }
+        return true;
+    }
+
+    public void feedAnimals() {
+        for(T animal : animals) {
+            ((Animal) animal).eat();
+        }
+        System.out.println("Tous les animaux de l'enclos " + this.name + " ont ete nourris");
+    }
+
+    public void clean() {
+        this.cleanliness = 1;
+        System.out.println("L'enclos " + this.name + " est maintenant propre");
+    }
+
+    public List<T> showAnimals() {
+		return animals;
+	}
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNbAnimal() {
+        return nbAnimal;
+    }
+
+    public ArrayList<T> getAnimals() {
+        return animals;
+    }
 }
-
-

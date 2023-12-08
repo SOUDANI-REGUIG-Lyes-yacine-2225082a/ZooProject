@@ -9,9 +9,12 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.junit.platform.engine.TestDescriptor.Visitor;
 
 import Animal.Animal;
+import Animal.AnimalMarin;
+import Animal.AnimalVolant;
 import Animal.Ovipaire.*;
 import Animal.Vivipaire.*;
 import Animal.Vivipaire.TDLoup.*;
+import Enclos.Aquarium;
 import Enclos.Enclos;
 import Enclos.Enclosure;
 import Enclos.Voliere;
@@ -22,9 +25,14 @@ public class Main {
 
     private static final Scanner scanner  = new Scanner(System.in);
 	private static final List<Thread> creatureThreads = new ArrayList<>();
-	static Enclos<Animal> ViceCity = new Enclos<Animal>("ViceCity", 10000, 100);
-	static GererAnimaux managerAnimal = new GererAnimaux(ViceCity);
+	static Enclos<Animal> ViceCity = new Enclos<Animal>("ViceCity", 400, 10);
+	static Voliere<AnimalVolant> FlyCity = new Voliere<AnimalVolant>("FlyCity", 500, 4, 500);
+	static Aquarium<AnimalMarin> SwimCity = new Aquarium<AnimalMarin>("SwimCity", 500, 8, 1000);
 	
+	
+	static Kaaris Gourou = new Kaaris("Lyes",'m',10);
+	static Zoo ZOO = new Zoo("ZOO",Gourou,10);
+	static GererAnimaux managerAnimal = new GererAnimaux(ViceCity, FlyCity, SwimCity, ZOO, Gourou);
 	public static void main(String[] args) {
         int mainChoice;
         do {

@@ -43,8 +43,15 @@ public final class Zoo {
             System.out.println("Animaux de l'enclos " +  enclosure.getName() +  " : " + enclosure.getAnimals());
         }
     }
+    
+    
 
-    public void setName(String name) {
+    public ArrayList<Enclosure> getEnclosures() {
+		return enclosures;
+	}
+
+
+	public void setName(String name) {
         this.name = name;
     }
 
