@@ -62,7 +62,7 @@ public class AnimalTest {
     @Test
     public void testToString() {
         String toStringResult = animal.toString();
-
+        //.
         // Check if certain information is present in the string representation
         assertTrue(toStringResult.contains("name='TestAnimal'"));
         assertTrue(toStringResult.contains("sex=m"));
