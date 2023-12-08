@@ -1,32 +1,58 @@
 package Enclos;
 
-import java.util.List;
+import Animal.Vivipaire.TDLoup.Loup;
+import Animal.Vivipaire.TDLoup.Meute;
 
-import Animal.Animal;
-import Animal.Vivipaire.TDLoup.*;
+/**
+ * Classe représentant un enclos spécifique destiné à héberger des loups.
+ *
+ * @param <T> Type d'animal autorisé dans l'enclos (doit être un loup).
+ */
+public class WolfEnclosure<T extends Loup> extends Enclosure<T> {
+    private Meute meute;
 
-public class WolfEnclosure<T extends Animal> extends Enclosure<T> {
-	private Meute Meute;
-	
-    public WolfEnclosure(String name, int area, int maxAnimal, Meute Meute) {
+    /**
+     * Constructeur de la classe WolfEnclosure.
+     *
+     * @param name      Nom de l'enclos.
+     * @param area      Superficie de l'enclos.
+     * @param maxAnimal Nombre maximum de loups que peut accueillir l'enclos.
+     * @param meute     Meute de loups associée à l'enclos.
+     */
+    public WolfEnclosure(String name, int area, int maxAnimal, Meute meute) {
         super(name, area, maxAnimal);
-        this.Meute = Meute;
+        this.meute = meute;
     }
-    
+
+    /**
+     * Affiche la meute de loups présente dans l'enclos.
+     */
     public void showWolfs() {
-    	System.out.println("L'enclos " + this.getName() + " contient les loups :");
-    	this.Meute.showWolfPack();
+        System.out.println("L'enclos " + this.getName() + " contient les loups :");
+        this.meute.showWolfPack();
     }
-    
-    // r��criture de la m�thode addAnimal() pour ajouter le Wolf directement dans la meute
-    public boolean addAnimal(T Wolf) {
-    	Meute.addWolf((Loup) Wolf);
-		return true;
+
+    /**
+     * Ajoute un loup à la meute de l'enclos.
+     *
+     * @param wolf Loup à ajouter à la meute.
+     * @return Vrai si le loup a été ajouté avec succès, sinon faux.
+     */
+    @Override
+    public boolean addAnimal(T wolf) {
+        this.meute.addWolf(wolf);
+        return true;
     }
-    
-    // r��criture de la m�thode removeAnimal() pour retirer le Wolf directement de la meute
-    public boolean removeAnimal(T Wolf) {
-    	Meute.removeWolf((Loup) Wolf);
-    	return true;
+
+    /**
+     * Retire un loup de la meute de l'enclos.
+     *
+     * @param wolf Loup à retirer de la meute.
+     * @return Vrai si le loup a été retiré avec succès, sinon faux.
+     */
+    @Override
+    public boolean removeAnimal(T wolf) {
+        this.meute.removeWolf(wolf);
+        return true;
     }
 }

@@ -22,10 +22,13 @@ public final class Zoo {
 
 
     public void addEnclosure(Enclosure enclosure) {
-        this.enclosures.add(enclosure);
-        System.out.println("L'enclos " + enclosure.getName() + " a �t� ajout� au Zoo " + this.name);
+        if(this.enclosures.size() <= this.maxEnclosure) {
+        	this.enclosures.add(enclosure);
+            System.out.println("L'enclos " + enclosure.getName() + " a �t� ajout� au Zoo " + this.name);
+        }else
+        	System.out.println("Il y a deja trop d'enclos");
     }
-
+    	
     public void showNbAnimals() {
         int nbAnimals = 0;
         for(Enclosure enclosure : this.enclosures) {

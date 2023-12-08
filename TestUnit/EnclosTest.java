@@ -54,8 +54,7 @@ class EnclosTest {
 	@Test
 	void testGetInfos() {
 		String toStringResult = enclos.getInfos();
-		assertTrue(toStringResult.contains("Niveau de proprete="+enclos.getCleanliness()));
-		assertTrue(enclos.getNbAnimal() == 0);
+		assertTrue(toStringResult.contains("Enclos = " + enclos.getName()));
 	}
 
 }

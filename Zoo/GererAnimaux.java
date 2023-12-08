@@ -9,17 +9,17 @@ import Animal.Ovipaire.Dragon;
 import Enclos.Enclos;
 import Enclos.Enclosure;
 
-public class DisplayMenu {
+public class GererAnimaux {
 
 	private static List<Animal> animals;
 	private static List<Thread> animalThreads;
 	private static Enclos enclosParDefaut;
 	private static final Scanner scanner  = new Scanner(System.in);
 	
-	public DisplayMenu(Enclos enclosParDefaut) {
-		DisplayMenu.enclosParDefaut = enclosParDefaut;
-		DisplayMenu.animals = new ArrayList<>();
-		DisplayMenu.animalThreads = new ArrayList<>();
+	public GererAnimaux(Enclos enclosParDefaut) {
+		GererAnimaux.enclosParDefaut = enclosParDefaut;
+		GererAnimaux.animals = new ArrayList<>();
+		GererAnimaux.animalThreads = new ArrayList<>();
     }
 
 	public static void MainMenu() {
