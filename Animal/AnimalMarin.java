@@ -1,7 +1,15 @@
 package Animal;
 
+/**
+ * Interface représentant un animal marin, capable de nager.
+ */
 public interface AnimalMarin {
 	public boolean marin = true;
-	
-    public String swim();
+
+    /**
+     * Méthode décrivant l'action de nager de l'animal marin.
+     *
+     * @return Une chaîne de caractères décrivant l'action de nager.
+     */
+    String swim();
 }
