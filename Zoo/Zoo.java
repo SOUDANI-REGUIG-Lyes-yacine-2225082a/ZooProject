@@ -24,17 +24,17 @@ public final class Zoo {
     public void addEnclosure(Enclosure enclosure) {
         if(this.enclosures.size() <= this.maxEnclosure) {
         	this.enclosures.add(enclosure);
-            System.out.println("L'enclos " + enclosure.getName() + " a �t� ajout� au Zoo " + this.name);
+            System.out.println("L'enclos " + enclosure.getName() + " a ete ajoute au Zoo " + this.name);
         }else
         	System.out.println("Il y a deja trop d'enclos");
     }
     	
-    public void showNbAnimals() {
+    public String showNbAnimals() {
         int nbAnimals = 0;
         for(Enclosure enclosure : this.enclosures) {
             nbAnimals += enclosure.getNbAnimal();
         }
-        System.out.println("Le zoo " + this.name + " a " + nbAnimals + " animaux");
+        return("Le zoo " + this.name + " a " + nbAnimals + " animaux");
     }
 
     public void showAllAnimals() {

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Enclosure <T> {
+public class Enclosure <T> {
 	private String name;
 	private int area;
 	private int maxAnimal; // nombre maximums d'animaux
@@ -19,10 +19,6 @@ public abstract class Enclosure <T> {
 	 *
 	 * @param <T> Type d'animal autorisé dans l'enclos.
 	 */
-
-
-
-
 
 
 	/**
