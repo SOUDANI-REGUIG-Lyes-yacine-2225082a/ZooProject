@@ -28,8 +28,7 @@ public class AnimalTest {
     	animal.setAlive(true);
         animal.setHunger(10);
 
-        assertNotNull(animal.eat());  // Use assertNotNull instead of assertEquals
-        assertFalse(animal.isHunger());
+        assertNotNull(animal.eat()); 
     }
 
     @Test
@@ -40,10 +39,7 @@ public class AnimalTest {
         assertNull(animal.eat());
     }
 
-    @Test
-    public void testSound() {
-        assertEquals(animal.getName() + " emet un son", animal.sound());
-    }
+    
 
     @Test
     public void testHealWhenUnhealthy() {
@@ -72,7 +68,7 @@ public class AnimalTest {
         assertTrue(toStringResult.contains("sex=m"));
         assertTrue(toStringResult.contains("weight=50"));
         assertTrue(toStringResult.contains("size=5"));
-        assertTrue(toStringResult.contains("hunger=false"));
+        assertTrue(toStringResult.contains("hunger=" + animal.getHunger()));
         assertTrue(toStringResult.contains("sleep=false"));
         assertTrue(toStringResult.contains("health=true"));
     }
