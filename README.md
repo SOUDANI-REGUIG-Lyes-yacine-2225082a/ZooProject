@@ -4,6 +4,8 @@
 
 Voici le répertoire de notre projet JAVA pour la ressource R3.04.
 
+Pour la Java Doc ouvrez le fichier index.html dans le dossier doc.
+
 ## Fonctionnalités
 
 - **Gestion des Animaux :** Choisissez parmi une variété d'animaux fantastiques et créez des habitats pour eux.
