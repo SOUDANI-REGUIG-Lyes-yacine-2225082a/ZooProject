@@ -1,12 +1,14 @@
+package Animal;
+
 /**
- * Interface représentant un animal marin, capable de nager.
+ * Interface représentant un animal terrestre, capable de marcher.
  */
-public interface AnimalMarin {
+public interface AnimalTerrestre {
 
     /**
-     * Méthode décrivant l'action de nager de l'animal marin.
+     * Méthode décrivant l'action de marcher de l'animal terrestre.
      *
-     * @return Une chaîne de caractères décrivant l'action de nager.
+     * @return Une chaîne de caractères décrivant l'action de marcher.
      */
-    String swim();
+    String walk();
 }
