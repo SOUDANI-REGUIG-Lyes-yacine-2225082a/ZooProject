@@ -26,9 +26,13 @@ https://mickael-martin-nevot.com/univ-amu/iut/but-informatique/qualite-de-develo
 ## Utilisation
 
 1 -Le premier est composé de cas d'utilisation pour tester les fonctions de chaque animal afin de vérifier qu'ils fonctionnent correctement.
+
 2 - Le deuxième est composé du cas d'utilisation spécifique aux loups pour vérifier qu'ils fonctionnent correctement.
+
 3 - Le troisième est composé du main qui utilise les threads. Cependant, toutes les fonctions souhaitées n'ont pas pu être implémentées.
+
 Le manque de temps nous a porté préjudice et nous a contraints à mettre à disposition 3 mains différents.
+
 
 En espérant que la simulation vous plaise.
 
