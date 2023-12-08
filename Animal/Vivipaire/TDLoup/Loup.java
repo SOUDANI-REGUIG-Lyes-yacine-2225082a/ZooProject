@@ -46,13 +46,14 @@ public class Loup extends Vivipaire implements AnimalTerrestre {
         System.out.println(super.getName() + " hurle \"" + howl + "\"");
     }
     
-    @Override
-    public void sound() {
+    
+    public void soundLoup() {
     	if (this.Meute != null) {
     		this.sound(Meute.getHowl());
     	} else {
     		this.sound("Aoouuuuuh");
     	}
+    	
     }
 
     public void hear() {

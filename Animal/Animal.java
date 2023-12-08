@@ -1,6 +1,6 @@
 package Animal;
 
-	//push
+	
 	// TODO : -add l'age fonct(viellissement, mort), -Revive des immortels(dragons, phoenixs, nymphes)
 	// TODO : -add la période d'incubation ou gestation
 
@@ -30,8 +30,8 @@ package Animal;
 	public String eat() {
 		if (isAlive) {
 			if (hunger < 100 && !sleep) {
-				hunger = hunger + 100;
-				System.out.println("Vous nourrissez " + name + " et sa faim et maintenant à " + hunger);
+				hunger = hunger + 10;
+				System.out.println("Vous nourrissez " + name + " et sa faim est maintenant a " + hunger);
 			} else {
 				System.out.println("Vous ne pouvez pas nourrir " + name + " maintenant");
 				return null;
