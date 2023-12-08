@@ -1,3 +1,5 @@
+package Animal;
+
 /**
  * Interface représentant un animal marin, capable de nager.
  */
