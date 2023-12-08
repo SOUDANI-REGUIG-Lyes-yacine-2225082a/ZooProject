@@ -1,6 +1,6 @@
 package Animal;
 
-	
+	//push
 	// TODO : -add l'age fonct(viellissement, mort), -Revive des immortels(dragons, phoenixs, nymphes)
 	// TODO : -add la période d'incubation ou gestation
 
